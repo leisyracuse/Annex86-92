@@ -1,0 +1,175 @@
+Program:  C:\Users\Jialei Shen\AppData\Local\Programs\Python\Python312\python.exe
+  Version:  3.4.1.7 release 64bit
+  Compiler: Visual C++ 1929
+  Created:  Tue Feb  6 22:10:52 2024
+Project (_file_name):  MOF-SingleZone-UseApi.prj
+cwd: C:\Users\Jialei Shen\OneDrive - Syracuse University\New folder\Projects\Annex86-92
+prj arg = MOF-SingleZone-UseApi.prj
+_pdrive , _pdir , _prjname MOF-SingleZone-UseApi, _pext .prj
+  Updated:  Sat May  4 02:47:26 2024
+Running ContamX 3.4.1.7 on MOF-SingleZone-UseApi.prj
+  Calls to SetupSimulation = 1
+
+Reading project file: MOF-SingleZone-UseApi.prj
+Run Control section read successfully.
+Speices section read successfully.
+Level section read successfully.
+Day Schedule section read successfully.
+Week Schedule section read successfully.
+WindP Profile section read successfully.
+Kinetic Reaction section read successfully.
+Filter Element section read successfully.
+Filter section read successfully.
+Source/Sink Element section read successfully.
+Airflow Element section read successfully.
+Airflow Element section read successfully.
+Controls section read successfully.
+AHS section read successfully.
+Zone section read successfully.
+Zone CC section read successfully.
+Path section read successfully.
+Duct Junction section read successfully.
+Duct Junction CC section read successfully.
+Duct Segment section read successfully.
+Source/Sink section read successfully.
+Occupant Day Schedule section read successfully.
+Occupant Exposure section read successfully.
+Note section read successfully.
+EnvListWpc_setup() creating Envelope path lists:
+ _nEnvPaths_Wpc 0, _useWPCwp 0, _wPBridge 0
+  1 envelope paths|terminals for WPC
+0 Duct Networks
+      network # 0 - jctns:
+
+  1 envelope paths|terminals|leaks for CSM/CEX
+contamx-lib => calling cxs->prjDataReadyFcnP(
+	cxs=[00000251A7FC7360]
+	cxs->pUserData_prjDataReadyFcn=[00000251A9964280]
+)
+Read PRJ : 45872 bytes allocated, 13592 freed, 32280 net
+Number of --
+      contaminants:    1
+     day schedules:    0
+    week schedules:    0
+           filters:    0
+         reactions:    0
+     wind profiles:    1
+   source elements:    1
+     flow elements:    1
+     airflow nodes:    2
+     airflow paths:    1
+      source/sinks:    1
+Airflow control --
+   cnvgSS: 1
+   tsdens: 0
+   densZP: 0
+   stackD: 0
+   dodMdt: 0
+
+Airflow Equations:
+   1 variable pressure nodes
+   1 constant pressure nodes
+  Number of equations: 2
+    Non-zero elements: 2
+Initial fill fraction: 0.500
+ Matrix Profile Analysis:
+      Average Profile: 0.00
+            Bandwidth: 0
+
++---
+|* |
+| *|
++---
+
+2 by 2 matrix, 2 non-zeroes, 0 fill
+
+ Skyline Matrix:
+     Number of rows: 1
+     Lower Triangle: 0 elements
+     Upper Triangle: 0 elements
+     Fill fraction: 1.000
+Solve nonlinear equations by Newton-Raphson with variable trust region.
+  relcnvg = 1e-05, abscnvg = 2e-06, itmax = 30
+Solve Jacobian SLAE by symmetric SKYline method.
+
+Airflow calculation data:
+ Node | source | eqn
+    1 :    1z :    1
+    2 :    0z :    2
+  [z = zone, j = junction, t = terminal]
+ Link numbers vs. path & duct numbers:
+    1 -   10:    1p
+  [p = path, d = duct, t = terminal, l = leak]
+
+Trace Species Mass Transfer Equations:
+
+Set up Mf matrix:
+   0 boundary layer sink nodes
+   0 deposition/resuspension nodes
+   1 variable Mf zone nodes
+   0 variable Mf jctn nodes
+   1 constant Mf zone nodes
+   1 contaminants
+  Number of equations: 2
+    Non-zero elements: 4
+Initial fill fraction: 1.000
+ Matrix Profile Analysis:
+      Average Profile: 0.00
+            Bandwidth: 0
+Solve simultaneous linear equations by non-symmetric SKYline method.
+
++---
+|**|
+|**|
++---
+
+2 by 2 matrix, 4 non-zeroes, 0 fill
+
+ Skyline Matrix:
+     Number of rows: 1
+     Lower Triangle: 0 elements
+     Upper Triangle: 0 elements
+     Fill fraction: 1.000
+
+Trace contaminants
+ Node | source | HCHO
+    1 :    1z :    1
+    2 :    0z :    2
+  [z = zone, j = junction, t = terminal]
+Arrays: 51068 bytes allocated, 17792 freed, 33276 net
+Start: 51084 bytes allocated, 17808 freed, 33276 net
+Running steady-state initialization:
+ DATE: Jan01   time: 00:00:00
+End Steady-state Initialization: writeOutput = 0
+       5 calls to FillAf()
+       1 calls to luf_sky_s()
+
+Solving mass transport system with trapezoidal solver 
+
+set_urst_init():
+  nzone 1, npath 1, nctm 1, njct 0, ndct 0
+  ncss+nbls+ndvr 1, nctrl 11, date0 1, date1 31
+  SizeData 216
+
+
+================= SimEnd() called Jan31 24:00:00 =================
+
+   44640 time steps
+   44640 time step iterations
+   44644 calls to SolveAf()
+   44645 calls to FillAf()
+       1 calls to luf_sky_s()
+       1 calls to lus_sky_s()
+   44640 calls to solve_Mft()
+   44640 calls to luf_sky_n()
+   44640 calls to lus_sky_n()
+
+NR its. :    0
+JfacBins: 44644
+
+rangeDWC: 0 lam, 0 trns, 0 turbulent
+
+
+End: 51196 bytes allocated, 17920 freed, 33276 net
+Final: 51196 bytes allocated, 51196 freed, 0 net
+Simulation completed successfully.

@@ -1,0 +1,222 @@
+ContamW 3.4.0.0 0
+
+! rows cols ud uf    T   uT     N     wH  u  Ao    a
+    58   66  0  0 293.150 2    0.00 10.00 0 0.600 0.280
+!  scale     us  orgRow  orgCol  invYaxis showGeom
+  1.000e+00   0      56       1     0        0
+! Ta       Pb      Ws    Wd    rh  day u..
+293.150 101325.0  0.000   0.0 0.000 1 2 0 0 1 ! steady simulation
+293.150 101325.0  1.000 270.0 0.000 1 2 0 0 1 ! wind pressure test
+null ! no weather file
+null ! no contaminant file
+null ! no continuous values file
+null ! no discrete values file
+null ! no WPC file
+null ! no EWC file
+WPC description
+!  Xref    Yref    Zref   angle u
+   0.000   0.000   0.000   0.00 0
+! epsP epsS  tShift  dStart dEnd wp mf wpctrig
+  0.01 0.01 00:00:00   1/1   1/1  0  0  0
+! latd  longtd   tznr  altd  Tgrnd u..
+ 40.00  -90.00  -6.00     0 283.15 2 0
+!sim_af afcalc afmaxi afrcnvg afacnvg afrelax uac Pbldg uPb
+     1      1     30   1e-05   1e-06    0.75   0 50.00   0
+!   slae rs aflmaxi aflcnvg aflinit Tadj
+      0   1    100   1e-06      1    0
+!sim_mf slae rs maxi   relcnvg   abscnvg relax gamma ucc
+    2             30  1.00e-04  1.00e-15 1.250         0 ! (cyclic)
+          0   1  100  1.00e-06  1.00e-15 1.100 1.000   0 ! (non-trace)
+          0   1  100  1.00e-06  1.00e-15 1.100 1.000   0 ! (trace)
+          0   1  100  1.00e-06  1.00e-15 1.100         0 ! (cvode)
+!mf_solver sim_1dz sim_1dd   celldx  sim_vjt udx
+     0        1       0     1.00e-01    0     0
+!cvode    rcnvg     acnvg    dtmax
+   0     1.00e-06  1.00e-13   0.00
+!tsdens relax tsmaxi cnvgSS densZP stackD dodMdt
+   0    0.75    20     1      0      0      0
+!date_st time_st  date_0 time_0   date_1 time_1    t_step   t_list   t_scrn
+  Jan01 00:00:00  Jan01 00:00:00  Jan31 24:00:00  00:01:00 01:00:00 01:00:00
+!restart  date  time
+    0    Jan01 00:00:00
+!list doDlg pfsave zfsave zcsave
+   1     1      1      1      1
+!vol ach -bw cbw exp -bw age -bw
+  0   0   0   0   0   0   0   0
+!rzf rzm rz1 csm srf log
+  0   0   0   1   1   1
+!bcx dcx pfq zfq zcq
+  0   0   0   0   0
+!dens   grav
+ 1.2041 9.8055
+! 0  1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 <- extra[]
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+0 ! rvals:
+!valZ valD valC
+   0    0    0
+!cfd   cfdcnvg  var zref maxi dtcmo solv smooth   cnvgUVW     cnvgT
+   0  1.00e-02    0    0 1000     1    1      1  1.00e-03  1.00e-03
+-999
+1 ! contaminants:
+   1
+1 ! species:
+! # s t   molwt    mdiam       edens       decay         Dm         CCdef        Cp          Kuv     u[5]      name
+  1 1 0  30.0000  0.0000e+00  0.0000e+00  0.0000e+00  2.0000e-05  4.1525e-07  1.0000e+03  0.0000e+00 15 0 0 0 0 HCHO
+density
+-999
+1 ! levels plus icon data:
+! #  refHt   delHt  ni  u  name
+  1   0.000   3.000 38 0 0 <1>
+!icn col row  #
+ 186  12   3   8
+ 186  18   3  11
+ 171  12   4   8
+ 171  18   4  11
+ 179  12   5   8
+ 179  18   5  11
+ 185  12   6   1
+ 185  18   6   2
+ 180  19   6   3
+ 185  24   6   3
+  42  12   7   1
+ 171  18   7   2
+ 179  18   8   2
+ 185  18   9   4
+  42  18  10   2
+  42  19  20   3
+ 185  20  20   5
+ 180  21  20   6
+ 185  23  20   6
+ 180  24  20   7
+ 173  26  20   7
+  14  25  21   0
+ 183  26  21   7
+  15  35  21   0
+  42  19  22   4
+ 185  20  22   8
+ 180  21  22   9
+ 185  23  22   9
+ 180  24  22  10
+ 182  25  22  10
+   5  26  22   1
+ 133  26  24   1
+ 180  27  24  11
+ 185  29  24  11
+  42  30  24   5
+  23  25  26   1
+  17  25  31   0
+  16  35  31   0
+-999
+0 ! day-schedules:
+-999
+0 ! week-schedules:
+-999
+1 ! wind pressure profiles:
+1 13 2 LowRiseWall
+Swami&Chandra 1987: Walls of low rise buildings
+   0.0    0.6
+  30.0    0.4
+  60.0    0.1
+  90.0  -0.45
+ 120.0   -0.5
+ 150.0  -0.45
+ 180.0  -0.35
+ 210.0  -0.45
+ 240.0   -0.5
+ 270.0  -0.45
+ 300.0    0.1
+ 330.0    0.4
+ 360.0    0.6
+-999
+0 ! kinetic reactions:
+-999
+0 ! filter elements:
+-999
+0 ! filters:
+-999
+1 ! source/sink elements:
+1 HCHO ccf sorption
+control value is negative since it is a sorption
+ 1e-09 0 6 4
+-999
+1 ! flow elements:
+1 23 plr_orfc orfc_1
+
+ 2.70811e-05 0.00848528 0.5 0.01 0.112838 0.6 30 0 0
+-999
+0 ! duct elements:
+-999
+0 ! control super elements:
+-999
+11 ! control nodes:
+! # typ seq f n  c1  c2 name
+  1 log  11 0 1   8   0 <none>
+HCHO conc [ug/m3]
+ 0 1 0 HCHO ug/m3
+  2 mul   5 0 2   3  11 <none>
+Multiply two inputs
+
+  3 set   1 0 0   0   0 <none>
+Convert adsorption rate from negative to positive, just for reporting
+ -1
+  4 log   6 0 1   2   0 <none>
+Sorption removal rate [ug/s]
+ 0 1 0 S ug/s
+  5 pas   9 0 1   6   0 T_room
+Room temperature in degC
+
+  6 mod   7 1 1   7   0 <none>
+Converting temperature from K to degC
+ 273.15 1
+  7 sns   2 0 0   0   0 <none>
+zone sensor
+ 0 1 0 0 1 1 1   0.000   0.000   0.000 0 none
+  8 pas  10 0 1   9   0 HCHO_room
+HCHO in ug/m3
+
+  9 mod   8 1 1  10   0 <none>
+Converting HCHO from kg/kg to ug/m3
+ 0 1.204e+09
+ 10 sns   3 0 0   0   0 <none>
+zone sensor
+ 0 1 0 0 1 1 0   0.000   0.000   0.000 0 HCHO
+ 11 set   4 0 0   0   0 sink_set
+Constant value
+ 1
+-999
+0 ! simple AHS:
+-999
+1 ! zones:
+! Z#  f  s#  c#  k#  l#  relHt    Vol  T0  P0  name  clr u[4]  axs cdvf <cdvf name> cfd <cfd name> <1D data:>
+   1  3   0   0   0   1   0.000    27 293.15 0 zone_1 -1 0 2 0 0 0 0 0
+-999
+1 ! initial zone concentrations:
+! Z#       HCHO
+   1  4.152e-07
+-999
+1 ! flow paths:
+! P#    f  n#  m#  e#  f#  w#  a#  s#  c#  l#    X       Y      relHt  mult wPset wPmod wazm Fahs Xmax Xmin icn dir u[4] cdvf <cdvf name> cfd <cfd data[4]>
+   1    1  -1   1   1   0   1   0   0   0   1   0.000   0.000   1.500 1 0 0.36 270 0 0 0  23  2 -1 0 0 0 0 0 0
+-999
+0 ! duct junctions:
+-999
+0 ! initial junction concentrations:
+-999
+0 ! duct segments:
+-999
+1 ! source/sinks:
+! #  z#  e#  s#  c#  mult   CC0  (X, Y, H)min  (X, Y, H)max u[1] cdvf <cdvf name> cfd <cfd name>
+  1   1   1   0  11     1     0  0 0 0  0 0 0 -1 0 0 0
+-999
+0 ! occupancy schedules:
+-999
+0 ! exposures:
+-999
+5 ! annotations:
+1 -1 Report HCHO conc in LOG file
+2 -1 Report adsorption rate S in LOG file
+3 2 Room temperature output
+4 2 HCHO output
+5 16 HCHO sink intensity setup
+-999
+* end project file.
