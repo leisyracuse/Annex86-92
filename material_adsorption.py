@@ -14,7 +14,7 @@ import math
 class SorptionMaterial:
     """
     Am: Material surface [m2]
-    Km: Average room mass transfer coefficient
+    Km: Average room mass transfer coefficient [m/s]
     a: Sorption equilibrium constant a [-]
     b: Sorption equilibrium constant b [-]
     """

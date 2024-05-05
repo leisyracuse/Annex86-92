@@ -8,7 +8,7 @@ ContamW 3.4.0.0 0
 293.150 101325.0  0.000   0.0 0.000 1 2 0 0 1 ! steady simulation
 293.150 101325.0  1.000 270.0 0.000 1 2 0 0 1 ! wind pressure test
 null ! no weather file
-null ! no contaminant file
+C:\Users\Jialei Shen\OneDrive - Syracuse University\New folder\Projects\Annex86-92\1-hcho_93ppb.ctm ! contaminant file
 null ! no continuous values file
 null ! no discrete values file
 null ! no WPC file
@@ -61,12 +61,12 @@ WPC description
    1
 1 ! species:
 ! # s t   molwt    mdiam       edens       decay         Dm         CCdef        Cp          Kuv     u[5]      name
-  1 1 0  30.0000  0.0000e+00  0.0000e+00  0.0000e+00  2.0000e-05  4.1525e-07  1.0000e+03  0.0000e+00 15 0 0 0 0 HCHO
+  1 1 0  30.0000  0.0000e+00  0.0000e+00  0.0000e+00  2.0000e-05  0.0000e+00  1.0000e+03  0.0000e+00 15 0 0 0 0 HCHO
 density
 -999
 1 ! levels plus icon data:
 ! #  refHt   delHt  ni  u  name
-  1   0.000   3.000 38 0 0 <1>
+  1   0.000   0.250 41 0 0 <1>
 !icn col row  #
  186  12   3   8
  186  18   3  11
@@ -104,12 +104,38 @@ density
  185  29  24  11
   42  30  24   5
   23  25  26   1
+ 130  26  30   1
+ 128  27  30   2
+ 129  28  30   3
   17  25  31   0
   16  35  31   0
 -999
-0 ! day-schedules:
+3 ! day-schedules:
+! # npts shap utyp ucnv name
+  1    2    0    1    0 FullClosed
+
+ 00:00:00 0
+ 24:00:00 0
+  2    2    0    1    0 FullOA
+
+ 00:00:00 1
+ 24:00:00 1
+  3    2    0    1    0 Sched01
+
+ 00:00:00 0.1
+ 24:00:00 0.1
 -999
-0 ! week-schedules:
+3 ! week-schedules:
+! # utyp ucnv name
+  1    1    0 FullClosed
+
+ 1 1 1 1 1 1 1 1 1 1 1 1
+  2    1    0 FullOA
+
+ 2 2 2 2 2 2 2 2 2 2 2 2
+  3    1    0 Sched01W
+sched is set to 0.1
+ 3 3 3 3 3 3 3 3 3 3 3 3
 -999
 1 ! wind pressure profiles:
 1 13 2 LowRiseWall
@@ -139,8 +165,14 @@ Swami&Chandra 1987: Walls of low rise buildings
 control value is negative since it is a sorption
  1e-09 0 6 4
 -999
-1 ! flow elements:
-1 23 plr_orfc orfc_1
+3 ! flow elements:
+1 28 fan_cvf ACH10
+designed airflow rate is 0.833LPM (1ACH), sched is set to 0.1
+ 0.000138888 3
+2 23 plr_orfc orfc
+
+ 2.70811e-11 8.48528e-07 0.5 1e-06 0.00112838 0.6 30 0 0
+3 23 plr_orfc orfc_1
 
  2.70811e-05 0.00848528 0.5 0.01 0.112838 0.6 30 0 0
 -999
@@ -184,19 +216,31 @@ zone sensor
 Constant value
  1
 -999
-0 ! simple AHS:
+1 ! simple AHS:
+! # zr# zs# pr# ps# px# name
+  1   2   3   4   5   6 -1 ahs
+1 ACH
 -999
-1 ! zones:
+3 ! zones:
 ! Z#  f  s#  c#  k#  l#  relHt    Vol  T0  P0  name  clr u[4]  axs cdvf <cdvf name> cfd <cfd name> <1D data:>
-   1  3   0   0   0   1   0.000    27 293.15 0 zone_1 -1 0 2 0 0 0 0 0
+   1  3   0   0   0   1   0.000  0.05 296.15 0 zone_1 -1 0 2 0 5 0 0 0
+   2 10   0   0   0   1   0.000     0 293.15 0 ahs(Ret) -1 0 2 0 0 0 0 0
+   3 10   0   0   0   1   0.000     0 293.15 0 ahs(Sup) -1 0 2 0 0 0 0 0
 -999
-1 ! initial zone concentrations:
+3 ! initial zone concentrations:
 ! Z#       HCHO
-   1  4.152e-07
+   1  9.634e-08
+   2  0.000e+00
+   3  9.634e-08
 -999
-1 ! flow paths:
+6 ! flow paths:
 ! P#    f  n#  m#  e#  f#  w#  a#  s#  c#  l#    X       Y      relHt  mult wPset wPmod wazm Fahs Xmax Xmin icn dir u[4] cdvf <cdvf name> cfd <cfd data[4]>
-   1    1  -1   1   1   0   1   0   0   0   1   0.000   0.000   1.500 1 0 0.36 270 0 0 0  23  2 -1 0 0 0 0 0 0
+   1    0  -1   1   2   0   0   0   1   0   1   0.000   0.000   0.125 1 0 0 -1 0 0 0  23  2 -1 0 0 0 0 0 0
+   2    8   3   1   0   0   0   1   0   0   1   0.000   0.000   0.000 1 0 0 0 1.67169e-05 0 0 128  2 -1 0 0 0 7 0 0
+   3    8   1   2   0   0   0   1   0   0   1   0.000   0.000   0.000 1 0 0 0 1.67169e-05 0 0 129  5 -1 0 0 0 7 0 0
+   4   16   2   3   0   0   0   0   2   0   1   0.000   0.000   0.000 1 0 0 -1 1.67169e-05 0 0   0  3 -1 0 0 0 7 0 0
+   5   32  -1   3   0   0   0   0   0   0   1   0.000   0.000   0.000 1 0 0 -1 0 0 0   0  3 -1 0 0 0 0 0 0
+   6   64   2  -1   0   0   0   0   0   0   1   0.000   0.000   0.000 1 0 0 -1 0 0 0   0  3 -1 0 0 0 0 0 0
 -999
 0 ! duct junctions:
 -999

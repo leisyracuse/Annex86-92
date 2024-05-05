@@ -34,11 +34,21 @@ SINK_SET = ControlIdxName(1, "sink_set")  # PRJ Control to set HCHO sink rate, u
 PV_PASS_CTRL = HCHO_ROOM    # process value (pv) passed to controller
 CO_SET_CTRL = SINK_SET      # control output (co) set by the controller
 
-Am = 3      # Material area, m2
-Km = 1e-5   # Average room mass transfer coefficient
-a = -10.908
-b = 9333.1
-material = SorptionMaterial(Am, Km, a, b) # define sorption material
+'''
+0: single zone
+1: chamber L
+2: chamber H
+'''
+sim_case = 0
+
+match sim_case:
+    case 0:
+        material = SorptionMaterial(0.1, 1.636e-3, -10.908, 9333.1) # define sorption material
+    case 1:
+        material = SorptionMaterial(0.09, 1e-5, -10.908, 9333.1) # define sorption material
+    case 2: 
+        material = SorptionMaterial(0.09, 1e-5, -10.908, 9333.1) # define sorption material
+
 
 # ====================================================== check_controls() =====
 
@@ -221,7 +231,7 @@ def main():
         S = sorption_sink.get_S(Cr)
         Ms = sorption_sink.get_Ms(dt)
         Cs = sorption_sink.get_Cs()
-
+        
         my_prj.setInputControlValue(CO_SET_CTRL.index, -1 * S) # Set sorption sink to negative because it is defined with a generation rate in PRJ
 
         # =====================================================================
