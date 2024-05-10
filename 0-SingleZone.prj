@@ -1,4 +1,4 @@
-ContamW 3.4.0.0 0
+ContamW 3.4.0.4 0
 
 ! rows cols ud uf    T   uT     N     wH  u  Ao    a
     58   66  0  0 293.150 2    0.00 10.00 0 0.600 0.280
@@ -8,7 +8,7 @@ ContamW 3.4.0.0 0
 293.150 101325.0  0.000   0.0 0.000 1 2 0 0 1 ! steady simulation
 293.150 101325.0  1.000 270.0 0.000 1 2 0 0 1 ! wind pressure test
 null ! no weather file
-C:\Users\Jialei Shen\OneDrive - Syracuse University\New folder\Projects\Annex86-92\0-hcho_500ugm-3.ctm ! contaminant file
+C:\Users\jns42\OneDrive - NIST\Annex86-92\1-hcho_93ppb.ctm ! contaminant file
 null ! no continuous values file
 null ! no discrete values file
 null ! no WPC file
@@ -219,25 +219,25 @@ Constant value
 1 ! simple AHS:
 ! # zr# zs# pr# ps# px# name
   1   2   3   4   5   6 -1 ahs
-0.5 ACH
+1 ACH
 -999
 3 ! zones:
-! Z#  f  s#  c#  k#  l#  relHt    Vol  T0  P0  name  clr u[4]  axs cdvf <cdvf name> cfd <cfd name> <1D data:>
+! Z#  f  s#  c#  k#  l#  relHt    Vol  T0  P0  name  clr uH uT uP uV axs cdvf <cdvfName> cfd <cfdName> <1dData:>
    1  3   0   0   0   1   0.000  0.05 296.15 0 zone_1 -1 0 2 0 5 0 0 0
    2 10   0   0   0   1   0.000     0 293.15 0 ahs(Ret) -1 0 2 0 0 0 0 0
    3 10   0   0   0   1   0.000     0 293.15 0 ahs(Sup) -1 0 2 0 0 0 0 0
 -999
 3 ! initial zone concentrations:
 ! Z#       HCHO
-   1  9.634e-08
-   2  4.152e-07
-   3  4.152e-07
+   1  0.000e+00
+   2  0.000e+00
+   3  9.634e-08
 -999
 6 ! flow paths:
-! P#    f  n#  m#  e#  f#  w#  a#  s#  c#  l#    X       Y      relHt  mult wPset wPmod wazm Fahs Xmax Xmin icn dir u[4] cdvf <cdvf name> cfd <cfd data[4]>
+! P#    f  n#  m#  e#  f#  w#  a#  s#  c#  l#    X       Y      relHt  mult wPset wPmod wazm Fahs Xmax Xmin icn dir u[4] cdvf <cdvfName> cfd <cfdData[4]>
    1    0  -1   1   2   0   0   0   1   0   1   0.000   0.000   0.125 1 0 0 -1 0 0 0  23  2 -1 0 0 0 0 0 0
-   2    8   3   1   0   0   0   1   0   0   1   0.000   0.000   0.000 1 0 0 0 2.09052e-05 0 0 128  2 -1 0 0 0 7 0 0
-   3    8   1   2   0   0   0   1   0   0   1   0.000   0.000   0.000 1 0 0 0 2.09052e-05 0 0 129  5 -1 0 0 0 7 0 0
+   2    8   3   1   0   0   0   1   2   0   1   0.000   0.000   0.000 1 0 0 0 1.67229e-05 0 0 128  2 -1 0 0 0 7 0 0
+   3    8   1   2   0   0   0   1   2   0   1   0.000   0.000   0.000 1 0 0 0 1.67229e-05 0 0 129  5 -1 0 0 0 7 0 0
    4   16   2   3   0   0   0   0   2   0   1   0.000   0.000   0.000 1 0 0 -1 0 0 0   0  3 -1 0 0 0 7 0 0
    5   32  -1   3   0   0   0   0   0   0   1   0.000   0.000   0.000 1 0 0 -1 0 0 0   0  3 -1 0 0 0 0 0 0
    6   64   2  -1   0   0   0   0   0   0   1   0.000   0.000   0.000 1 0 0 -1 0 0 0   0  3 -1 0 0 0 0 0 0

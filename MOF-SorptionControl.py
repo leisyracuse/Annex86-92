@@ -39,15 +39,22 @@ CO_SET_CTRL = SINK_SET      # control output (co) set by the controller
 1: chamber L
 2: chamber H
 '''
-sim_case = 0
+sim_case = 1
 
 match sim_case:
     case 0:
-        material = SorptionMaterial(0.1, 1.636e-3, -10.908, 9333.1) # define sorption material
+        material = SorptionMaterial(0.045, 9.5e-4, -44.03, 3751.57) # define sorption material
     case 1:
-        material = SorptionMaterial(0.09, 1e-5, -10.908, 9333.1) # define sorption material
+        material = SorptionMaterial(0.09, 5.8083e-4, -1.1, 1097.26) # define sorption material
     case 2: 
         material = SorptionMaterial(0.09, 1e-5, -10.908, 9333.1) # define sorption material
+
+'''
+Am: float
+Km: float
+a: float
+b: float
+'''
 
 
 # ====================================================== check_controls() =====
