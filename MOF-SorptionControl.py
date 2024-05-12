@@ -45,7 +45,7 @@ match sim_case:
     case 0:
         material = SorptionMaterial(0.045, 9.5e-4, -44.03, 3751.57) # define sorption material
     case 1:
-        material = SorptionMaterial(0.09, 5.8083e-4, -1.1, 1097.26) # define sorption material
+        material = SorptionMaterial(0.09, 4.528e-4, -0.29, 743.05) # define sorption material
     case 2: 
         material = SorptionMaterial(0.09, 1e-5, -10.908, 9333.1) # define sorption material
 
