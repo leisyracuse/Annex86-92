@@ -74,6 +74,7 @@ class Sorption:
             S = Am * (dMs / dt) => dMs = S / Am * dt
             Ms = Ms + dMs
         '''
+        # dMs = (self.S / self.Am) * dt   # mass adsorbed at time t (dt)
         dMs = (self.S / self.Am) * dt   # mass adsorbed at time t (dt)
         Ms = self.Ms + dMs
         self.Ms = Ms         # set Ms of the material, ready for the next step
