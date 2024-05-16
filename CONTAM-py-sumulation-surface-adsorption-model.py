@@ -1,8 +1,5 @@
 import numpy as np
 from scipy.integrate import cumulative_trapezoid
-from dataclasses import dataclass
-import matplotlib.pyplot as plt 
-from material_adsorption import SorptionMaterial
 
 def surface_adsorption_model(time, ca, ci):
     '''
@@ -84,59 +81,5 @@ def solve_quadratic(a, b, y):
     print("2nd root: " +repr(root2))
     
     return root1, root2
-
-@dataclass
-class ChamberPara():
-    '''
-    ACH -> air change rate, 1/h
-    V_chamber -> chamber volume, m^3
-    Q -> chamber air flow rate, m^3/s
-    ci -> injection/outdoor concentration, ug/m^3
-    '''
-    ACH: float
-    V_chamber: float
-    Q: float
-    ci: float
-    ca0: float
-    cs0: float
-
-if __name__ == "__main__":
-    MOF = SorptionMaterial(Am = 0.225*0.2*2, Km=2.09/3600, a=-1.1, b=1097.26)
-    chamber = ChamberPara(ACH = 1, V_chamber=0.05, Q=1*0.05, ci = 93*0.0409*30,
-                          ca0=0, cs0=0)
-    
-    dt = 60
-    time = np.arange(0, 28*24*3600, dt)
-
-    ca_array = np.zeros(len(time))
-    # cs_array = np.zeros(len(time))
-    ci_array = np.zeros(len(time))
-    ca_array[0] = chamber.ca0
-    # cs_array[0] = chamber.cs0
-    ci_array[0] = chamber.ci
-    
-    for i in range (1,len(time)):
-       print("i = " +repr(i))
-       ca_i = ca_array[i-1]
-       print("ca of step i: " +repr(ca_i))
-    #    cs_i = cs_array[-1]
-
-       sink_i = surface_adsorption_model(time[:i],ca_array[:i],ci_array[:i])
-       ca_i1 = ca_i + dt*(chamber.ACH/3600*(chamber.ci - ca_i) - (sink_i)/chamber.V_chamber)
-       
-       ca_array[i] = ca_i1
-       ci_array[i] = chamber.ci
-    
-    print(ca_array)
-
-    test_time = np.array([0, 1,3,5,7,10,14,17,21,24,28])*24*3600
-    test_conc = np.array([0, 25.736, 26.252, 29.794,30.738,34.429,35.628,34.533,40.389,42.340,47.159])
-    test_conc = test_conc*0.0409*30
-    plt.figure()
-    plt.plot(test_time, test_conc, 'ro', label = 'test')
-    plt.plot(time, ca_array, 'b-', label = 'model')
-    plt.legend()
-    plt.show()
-
 
 
