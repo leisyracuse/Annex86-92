@@ -3,11 +3,15 @@ MOF-SorptionControl.py - simulate air contaminant adsorbed by MOF material.
 """
 
 import os
+import numpy as np
 from argparse import ArgumentParser
 from dataclasses import dataclass
 from contamxpy import cxLib
 from material_adsorption import SorptionMaterial
+from material_adsorption import Diffusion
 from material_adsorption import Sorption
+from material_adsorption import Polynomial
+from material_adsorption import InterfaceModel
 
 
 @dataclass
@@ -43,18 +47,11 @@ sim_case = 1
 
 match sim_case:
     case 0:
-        material = SorptionMaterial(0.045, 9.5e-4, -44.03, 3751.57) # define sorption material
+        material = SorptionMaterial(Am = 0.045, Km = 9.5e-4, a = -44.03, b = 3751.57, Kma = 4.05e5, Dm = 9.99e-7) # define sorption material
     case 1:
-        material = SorptionMaterial(0.09, 4.528e-4, -0.29, 743.05) # define sorption material
+        material = SorptionMaterial(Am = 0.09, Km = 4.528e-4, a = -0.29, b = 743.05, Kma = 4.05e5, Dm = 9.99e-7) # define sorption material
     case 2: 
-        material = SorptionMaterial(0.09, 1e-5, -10.908, 9333.1) # define sorption material
-
-'''
-Am: float
-Km: float
-a: float
-b: float
-'''
+        material = SorptionMaterial(Am = 0.09, Km = 1e-5, a = -10.908, b = 9333.1, Kma = 4.05e5, Dm = 9.99e-7) # define sorption material
 
 
 # ====================================================== check_controls() =====
@@ -181,7 +178,11 @@ def main():
     # USER INPUT - Initialize controller class.
     # =========================================================================
 
-    sorption_sink = Sorption(material)
+    # Polynomial model for adsorption of pollutants on material surface.
+    # sorption_sink = Polynomial(material)
+
+    # Material-Air Interface Model for adsorption of pollutants on material surface.
+    sorption_sink = InterfaceModel(material)
 
     # ----- Get simulation run info
     start_day = my_prj.getSimStartDate()
@@ -203,9 +204,9 @@ def main():
     num_time_steps = 0
     if sim_duration_sec != 0:
         num_time_steps = int(sim_duration_sec / dt)
-        print(f"PRJ settings => Transient simulation w/ {num_time_steps} time steps. (Sorption material: Am={material.Am}, Km={material.Km}, a={material.a}, b={material.b})")
+        print(f"PRJ settings => Transient simulation w/ {num_time_steps} time steps. (Sorption material: Am={material.Am}, Km={material.Km}, a={material.a}, b={material.b}, Kma={material.Kma}, Dm={material.Dm})")
     else:
-        print("PRJ settings => Steady state simulation. (Sorption material: Am={material.Am}, Km={material.Km}, a={material.a}, b={material.b})")
+        print("PRJ settings => Steady state simulation. (Sorption material: Am={material.Am}, Km={material.Km}, a={material.a}, b={material.b}, Kma={material.Kma}, Dm={material.Dm})")
 
     # ----- Get the current date/time after initial steady state simulation
     current_date = my_prj.getCurrentDayOfYear()
@@ -221,9 +222,14 @@ def main():
     # ----- Output initial results.
     current_date = my_prj.getCurrentDayOfYear()
     current_time = my_prj.getCurrentTimeInSec()
-    Cr = my_prj.getOutputControlValue(PV_PASS_CTRL.index) # HCHO concn in room air [ug/m3]
-    print("day\ttime\tCr[ug/m3]\tS[ug/s]\tMs[ug/m2]\tCs[ug/m3]")
-    print(f"{current_date}\t{current_time}\t{Cr}\t0\t0\t0") # set initial values
+    Ca = my_prj.getOutputControlValue(PV_PASS_CTRL.index) # HCHO concn in room air [ug/m3]
+    print("day\ttime\tCa[ug/m3]\tS[ug/s]\tMs[ug/m2]\tCm[ug/m3]")
+    print(f"{current_date}\t{current_time}\t{Ca}\t0\t0\t0") # set initial values
+    Ms = 0 # initial adsorbed mass [ug/m2]
+
+    # initialize material diffusion model
+    mat_diff = Diffusion(material)
+    mat_diff.gen_mesh(depth = 4e-3, delta_y = 4e-4)
 
     # =========================================================================
     # Run Simulation
@@ -233,11 +239,18 @@ def main():
         # =====================================================================
         # Tasks to perform BEFORE current time step.
         # =====================================================================
-        # Calculate sorption rate S, adsorbed mass Ms, and gas phase conc on material surface Cs, based on room air conc Cr
+        # Calculate sorption rate S, adsorbed mass Ms, and gas phase conc on material surface Cm, based on room air conc Ca
 
-        S = sorption_sink.get_S(Cr)
+        # Polynomial model for adsorption of pollutants on material surface.
+        # S = sorption_sink.get_S(Ca)
+        # Ms = sorption_sink.get_Ms(dt)
+        # Cm = sorption_sink.get_Cm()
+
+        # Material-Air Interface Model for adsorption of pollutants on material surface.
+        S = sorption_sink.get_S(Ca)
         Ms = sorption_sink.get_Ms(dt)
-        Cs = sorption_sink.get_Cs()
+        Cm_array = mat_diff.solve_crank_nicolson(dt, S)
+        Cm = sorption_sink.get_Cm(Cm_array[-1])
         
         my_prj.setInputControlValue(CO_SET_CTRL.index, -1 * S) # Set sorption sink to negative because it is defined with a generation rate in PRJ
 
@@ -251,8 +264,13 @@ def main():
         # =====================================================================
         current_date = my_prj.getCurrentDayOfYear()
         current_time = my_prj.getCurrentTimeInSec()
-        Cr = my_prj.getOutputControlValue(PV_PASS_CTRL.index)
-        print(f"{current_date}\t{current_time}\t{Cr}\t{S}\t{Ms}\t{Cs}")
+        Ca = my_prj.getOutputControlValue(PV_PASS_CTRL.index)
+        print(f"{current_date}\t{current_time}\t{Ca}\t{S}\t{Ms}\t{Cm}")
+
+        # visualize concentration distribution in material
+        if i % 100 == 0:
+            mat_diff.plot_concentration_distribution(Cm_array, i)
+        print(f"Cm_array: {Cm_array}")
 
     my_prj.endSimulation()
 

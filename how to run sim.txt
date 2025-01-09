@@ -1,0 +1,3 @@
+python -m MOF-SorptionControl 0-SingleZone.prj -t
+
+python -m MOF-SorptionControl 0-SingleZone.prj > out.txt
