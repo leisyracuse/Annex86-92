@@ -249,7 +249,8 @@ def main():
         # Material-Air Interface Model for adsorption of pollutants on material surface.
         S = sorption_sink.get_S(Ca)
         Ms = sorption_sink.get_Ms(dt)
-        Cm_array = mat_diff.solve_crank_nicolson(dt, S)
+        # Cm_array = mat_diff.solve_crank_nicolson(dt, S)
+        Cm_array = mat_diff.solve_implicit_central(dt, S)
         Cm = sorption_sink.get_Cm(Cm_array[-1])
         
         my_prj.setInputControlValue(CO_SET_CTRL.index, -1 * S) # Set sorption sink to negative because it is defined with a generation rate in PRJ
@@ -267,10 +268,10 @@ def main():
         Ca = my_prj.getOutputControlValue(PV_PASS_CTRL.index)
         print(f"{current_date}\t{current_time}\t{Ca}\t{S}\t{Ms}\t{Cm}")
 
-        # visualize concentration distribution in material
-        if i % 100 == 0:
-            mat_diff.plot_concentration_distribution(Cm_array, i)
-        print(f"Cm_array: {Cm_array}")
+        # # visualize concentration distribution in material
+        # if i % 100 == 0:
+        #     mat_diff.plot_concentration_distribution(Cm_array, i)
+        # print(f"Cm_array: {Cm_array}")
 
     my_prj.endSimulation()
 

@@ -204,6 +204,86 @@ class Diffusion():
         self.Cm_array = Cm_next
         return self.Cm_array
 
+    def solve_implicit_central(self, delta_t, S):
+        '''
+        Solve "∂Cm(y,t)/∂t = Dm * (∂²Cm(y,t)/∂y²)" numerically with the implicit scheme, 
+        with boundary conditions:
+            - "Dm * ∂Cm(y = 0, t) / ∂y = 0" (Neumann boundary condition at the bottom)
+            - "Dm * ∂Cm(y = depth, t) / ∂y = S" (adsorption rate at the surface)
+        
+        Matrix form:
+            A * Cm_next = B * Cm_current + b
+
+        Args:
+            delta_t: `float`
+                Time step for solving the diffusion equation, seconds
+            S: `float`
+                Adsorption rate at the surface, [ug/m2/s]
+        
+        Returns:
+            Cm_array: Updated concentration distribution in the material at the next time step [ug/m^3]
+        '''
+        # Number of nodes
+        num_node = len(self.Cm_array)
+        if num_node == 0:
+            raise ValueError("Mesh not initialized. Please call `gen_mesh` before solving.")
+        
+        # Create a new array for the next time step
+        Cm_next = np.copy(self.Cm_array)
+
+        # Compute diffusion constant terms
+        alpha = self.Dm * delta_t / (self.delta_y**2) 
+        # Matrix A for the implicit part
+        # Matrix A Format:
+        # 0     1     2     3     4 ... N-2     N-1     N       --> index
+        # _______________________________________________________
+        # 1+2a  -a    0     0     0 ... 0       0       0       --> row 0
+        # -a    1+2a  -a    0     0 ... 0       0       0       --> row 1
+        # 0     -a    1+2a  -a    0 ... 0       0       0       --> row 2
+        # 0     0     -a    1+2a  -a... 0       0       0       --> row 3
+        # ...                                                   ...
+        # 0     0     0     0     0 ... -a      1+2a    -a      --> row N-1
+        # 0     0     0     0     0 ... 0       -a      1+2a    --> row N
+        diag = np.ones(num_node) * (1 + 2 * alpha)
+        off_diag = np.ones(num_node - 1) * (-alpha)
+        A = np.diag(diag) + np.diag(off_diag, k=1) + np.diag(off_diag, k=-1)
+
+        # Matrix B for the explicit part
+        # Matrix B Format:
+        # 0     1     2     3     4 ... N-2     N-1     N       --> index
+        # _______________________________________________________
+        # 1-2a  a     0     0     0 ... 0       0       0       --> row 0
+        # a     1-2a  a     0     0 ... 0       0       0       --> row 1
+        # 0     a     1-2a  a     0 ... 0       0       0       --> row 2
+        # 0     0     a     1-2a  a ... 0       0       0       --> row 3
+        # ...                                                   ...
+        # 0     0     0     0     0 ... a       1-2a    a       --> row N-1
+        # 0     0     0     0     0 ... 0       a       1-2a    --> row N
+        # diag_b = np.ones(num_node) * (1 - 2 * alpha)
+        # off_diag_b = np.ones(num_node - 1) * alpha
+        # B = np.diag(diag_b) + np.diag(off_diag_b, k=1) + np.diag(off_diag_b, k=-1)
+        B = np.diag(np.ones(num_node))
+
+        # Adjust A and B for Neumann boundary condition at y = 0
+        A[0, 1] = -2 * alpha
+        # B[0, 1] = 2 * alpha
+
+        # Adjust A and B for Neumann boundary condition at y = depth
+        # A[-1, -2] = -2 * alpha
+        A[-1, -1] = 1 + 1 * alpha
+        # B[-1, -2] = 2 * alpha
+
+        # Right-hand side vector
+        b = B @ self.Cm_array
+        # b[-1] += (S / self.mat.Am) * self.delta_y / self.Dm  # Contribution to concentration [ug/m^3]; S has unit [ug/s]
+        b[-1] += (S / self.mat.Am) * delta_t / self.delta_y
+        # Solve for the next time step
+        Cm_next = np.linalg.solve(A, b)
+
+        # Update the concentration array
+        self.Cm_array = Cm_next
+        return self.Cm_array
+
 # ====================================================== class Sorption =====
 
 class Sorption():
