@@ -248,17 +248,17 @@ class Diffusion():
         off_diag = np.ones(num_node - 1) * (-alpha)
         A = np.diag(diag) + np.diag(off_diag, k=1) + np.diag(off_diag, k=-1)
 
-        # Matrix B for the explicit part
+        # Matrix B 
         # Matrix B Format:
         # 0     1     2     3     4 ... N-2     N-1     N       --> index
         # _______________________________________________________
-        # 1-2a  a     0     0     0 ... 0       0       0       --> row 0
-        # a     1-2a  a     0     0 ... 0       0       0       --> row 1
-        # 0     a     1-2a  a     0 ... 0       0       0       --> row 2
-        # 0     0     a     1-2a  a ... 0       0       0       --> row 3
+        # 1     0     0     0     0 ... 0       0       0       --> row 0
+        # 0     1     0     0     0 ... 0       0       0       --> row 1
+        # 0     0     1     0     0 ... 0       0       0       --> row 2
+        # 0     0     0     1     0 ... 0       0       0       --> row 3
         # ...                                                   ...
-        # 0     0     0     0     0 ... a       1-2a    a       --> row N-1
-        # 0     0     0     0     0 ... 0       a       1-2a    --> row N
+        # 0     0     0     0     0 ... 0       1       0       --> row N-1
+        # 0     0     0     0     0 ... 0       0       1       --> row N
         # diag_b = np.ones(num_node) * (1 - 2 * alpha)
         # off_diag_b = np.ones(num_node - 1) * alpha
         # B = np.diag(diag_b) + np.diag(off_diag_b, k=1) + np.diag(off_diag_b, k=-1)
