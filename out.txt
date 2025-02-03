@@ -812,3 +812,638 @@ Error: 546.7773
 Optimizing Interface Model: Kma = 2.3527e+05, Dm = 3.8834e-04
 Error: 562.5235
 Optimizing Interface Model: Kma = 1.9226e+05, Dm = 3.2971e-05
+Error: 611.6871
+Optimizing Interface Model: Kma = 2.5362e+05, Dm = 5.3742e-04
+Error: 612.8281
+Optimizing Interface Model: Kma = 2.2360e+05, Dm = 3.0344e-04
+Error: 547.2730
+Optimizing Interface Model: Kma = 2.3955e+05, Dm = 1.0332e-04
+Error: 571.7395
+Optimizing Interface Model: Kma = 2.0652e+05, Dm = 3.4779e-04
+Error: 558.8394
+Optimizing Interface Model: Kma = 1.9226e+05, Dm = 3.2971e-05
+Error: 611.6871
+Optimizing Interface Model: Kma = 2.3503e+05, Dm = 2.9329e-05
+Error: 562.0651
+Optimizing Interface Model: Kma = 2.2805e+05, Dm = 4.1681e-04
+Error: 551.2327
+Optimizing Interface Model: Kma = 2.0575e+05, Dm = 2.0834e-04
+Error: 560.5450
+Optimizing Interface Model: Kma = 2.3652e+05, Dm = 3.3754e-04
+Error: 565.0329
+Optimizing Interface Model: Kma = 1.8905e+05, Dm = 7.5367e-04
+Error: 630.6113
+Optimizing Interface Model: Kma = 2.1745e+05, Dm = 1.0384e-04
+Error: 546.1411
+Optimizing Interface Model: Kma = 1.5464e+05, Dm = 9.5696e-05
+Error: 1084.5151
+Optimizing Interface Model: Kma = 2.4498e+05, Dm = 9.6462e-04
+Error: 585.7926
+Optimizing Interface Model: Kma = 2.1640e+05, Dm = 1.8144e-04
+Error: 546.4979
+Optimizing Interface Model: Kma = 2.7567e+05, Dm = 3.4805e-04
+Error: 701.6070
+Optimizing Interface Model: Kma = 2.0987e+05, Dm = 6.0796e-04
+Error: 552.7340
+Optimizing Interface Model: Kma = 2.2499e+05, Dm = 1.5564e-05
+Error: 548.2430
+Optimizing Interface Model: Kma = 2.3333e+05, Dm = 2.1035e-04
+Error: 558.9478
+Optimizing Interface Model: Kma = 1.7221e+05, Dm = 7.2710e-04
+Error: 785.8279
+Optimizing Interface Model: Kma = 2.0085e+05, Dm = 7.6189e-04
+Error: 574.2724
+Optimizing Interface Model: Kma = 2.7264e+05, Dm = 2.8501e-04
+Error: 688.0928
+Optimizing Interface Model: Kma = 2.1517e+05, Dm = 2.2056e-04
+Error: 547.1364
+Optimizing Interface Model: Kma = 2.2333e+05, Dm = 2.0330e-05
+Error: 547.1158
+Optimizing Interface Model: Kma = 2.0859e+05, Dm = 2.2490e-04
+Error: 554.8203
+Optimizing Interface Model: Kma = 2.0246e+05, Dm = 2.4815e-04
+Error: 569.2152
+Optimizing Interface Model: Kma = 2.3316e+05, Dm = 1.0208e-04
+Error: 558.6422
+Optimizing Interface Model: Kma = 1.9908e+05, Dm = 4.7566e-04
+Error: 580.5292
+Optimizing Interface Model: Kma = 1.9887e+05, Dm = 7.9591e-04
+Error: 581.3182
+Optimizing Interface Model: Kma = 2.2172e+05, Dm = 6.5949e-04
+Error: 546.3657
+Optimizing Interface Model: Kma = 2.1850e+05, Dm = 2.1612e-04
+Error: 545.9505
+Optimizing Interface Model: Kma = 2.3993e+05, Dm = 3.2772e-04
+Error: 572.6424
+Optimizing Interface Model: Kma = 1.9782e+05, Dm = 2.9631e-04
+Error: 585.4179
+Optimizing Interface Model: Kma = 2.1488e+05, Dm = 3.3769e-04
+Error: 547.3216
+Optimizing Interface Model: Kma = 2.2550e+05, Dm = 7.5841e-04
+Error: 548.6556
+Optimizing Interface Model: Kma = 2.0131e+05, Dm = 9.3028e-05
+Error: 572.7710
+Optimizing Interface Model: Kma = 2.4008e+05, Dm = 2.4416e-04
+Error: 573.0100
+Optimizing Interface Model: Kma = 2.1720e+05, Dm = 7.1889e-05
+Error: 546.2091
+Optimizing Interface Model: Kma = 2.4420e+05, Dm = 2.8358e-04
+Error: 583.6240
+Optimizing Interface Model: Kma = 2.2428e+05, Dm = 3.4870e-04
+Error: 547.7138
+Optimizing Interface Model: Kma = 2.1034e+05, Dm = 5.2642e-04
+Error: 552.0402
+Optimizing Interface Model: Kma = 2.4761e+05, Dm = 1.8737e-04
+Error: 593.4626
+Optimizing Interface Model: Kma = 2.2387e+05, Dm = 7.2548e-05
+Error: 547.4389
+Optimizing Interface Model: Kma = 2.2235e+05, Dm = 2.8201e-04
+Error: 546.6163
+Optimizing Interface Model: Kma = 2.1494e+05, Dm = 1.5286e-04
+Error: 547.2765
+Optimizing Interface Model: Kma = 2.0456e+05, Dm = 2.5418e-04
+Error: 563.4207
+Optimizing Interface Model: Kma = 2.1381e+05, Dm = 2.9588e-04
+Error: 548.1181
+Optimizing Interface Model: Kma = 2.3327e+05, Dm = 1.6016e-04
+Error: 558.8440
+Optimizing Interface Model: Kma = 2.1774e+05, Dm = 4.0054e-04
+Error: 546.0708
+Optimizing Interface Model: Kma = 1.9475e+05, Dm = 9.3341e-05
+Error: 598.9339
+Optimizing Interface Model: Kma = 2.0880e+05, Dm = 2.7997e-04
+Error: 554.4460
+Optimizing Interface Model: Kma = 2.3518e+05, Dm = 4.9658e-04
+Error: 562.3446
+Optimizing Interface Model: Kma = 2.1555e+05, Dm = 2.2056e-04
+Error: 546.9095
+Optimizing Interface Model: Kma = 2.2320e+05, Dm = 1.9766e-04
+Error: 547.0412
+Optimizing Interface Model: Kma = 2.1989e+05, Dm = 9.0089e-05
+Error: 545.9481
+Optimizing Interface Model: Kma = 2.1184e+05, Dm = 2.1584e-05
+Error: 550.0935
+Optimizing Interface Model: Kma = 2.3316e+05, Dm = 2.4959e-04
+Error: 558.6422
+Optimizing Interface Model: Kma = 2.2423e+05, Dm = 1.2701e-04
+Error: 547.6773
+Optimizing Interface Model: Kma = 2.1756e+05, Dm = 4.1411e-04
+Error: 546.1134
+Optimizing Interface Model: Kma = 2.2189e+05, Dm = 6.7116e-05
+Error: 546.4300
+Optimizing Interface Model: Kma = 2.1745e+05, Dm = 7.5232e-05
+Error: 546.1411
+Optimizing Interface Model: Kma = 2.1844e+05, Dm = 8.0280e-05
+Error: 545.9569
+Optimizing Interface Model: Kma = 2.2045e+05, Dm = 1.6601e-04
+Error: 546.0269
+Optimizing Interface Model: Kma = 2.1488e+05, Dm = 1.5052e-04
+Error: 547.3217
+Optimizing Interface Model: Kma = 2.2028e+05, Dm = 6.8689e-04
+Error: 545.9974
+Optimizing Interface Model: Kma = 2.1969e+05, Dm = 6.0739e-05
+Error: 545.9319
+Optimizing Interface Model: Kma = 2.3503e+05, Dm = 6.0437e-05
+Error: 562.0651
+Optimizing Interface Model: Kma = 2.2278e+05, Dm = 2.7228e-04
+Error: 546.8173
+Optimizing Interface Model: Kma = 2.1884e+05, Dm = 8.3130e-06
+Error: 545.9244
+Optimizing Interface Model: Kma = 2.2085e+05, Dm = 6.4275e-04
+Error: 546.1096
+Optimizing Interface Model: Kma = 2.2073e+05, Dm = 2.4358e-04
+Error: 546.0828
+Optimizing Interface Model: Kma = 2.1828e+05, Dm = 1.6142e-04
+Error: 545.9762
+Optimizing Interface Model: Kma = 2.2085e+05, Dm = 1.1555e-04
+Error: 546.1086
+Optimizing Interface Model: Kma = 2.1091e+05, Dm = 8.2738e-04
+Error: 551.2439
+Optimizing Interface Model: Kma = 2.1678e+05, Dm = 8.3130e-06
+Error: 546.3508
+Optimizing Interface Model: Kma = 2.2336e+05, Dm = 1.4752e-04
+Error: 547.1272
+Optimizing Interface Model: Kma = 2.0350e+05, Dm = 8.2254e-05
+Error: 566.2301
+Optimizing Interface Model: Kma = 2.0737e+05, Dm = 5.8062e-04
+Error: 557.0877
+Optimizing Interface Model: Kma = 2.2212e+05, Dm = 4.0054e-04
+Error: 546.5208
+Optimizing Interface Model: Kma = 2.1519e+05, Dm = 3.6046e-04
+Error: 547.1237
+Optimizing Interface Model: Kma = 2.1056e+05, Dm = 3.1307e-05
+Error: 551.7310
+Optimizing Interface Model: Kma = 2.1111e+05, Dm = 2.4968e-05
+Error: 550.9843
+Optimizing Interface Model: Kma = 2.1555e+05, Dm = 8.0329e-06
+Error: 546.9103
+Optimizing Interface Model: Kma = 2.2280e+05, Dm = 3.6503e-04
+Error: 546.8293
+Optimizing Interface Model: Kma = 2.1826e+05, Dm = 2.1612e-04
+Error: 545.9796
+Optimizing Interface Model: Kma = 2.1692e+05, Dm = 5.5384e-04
+Error: 546.3000
+Optimizing Interface Model: Kma = 2.3277e+05, Dm = 8.5298e-04
+Error: 557.9774
+Optimizing Interface Model: Kma = 2.1416e+05, Dm = 1.5241e-04
+Error: 547.8339
+Optimizing Interface Model: Kma = 2.1020e+05, Dm = 2.4648e-04
+Error: 552.2342
+Optimizing Interface Model: Kma = 2.1633e+05, Dm = 1.4005e-04
+Error: 546.5256
+Optimizing Interface Model: Kma = 2.1674e+05, Dm = 4.5524e-04
+Error: 546.3631
+Optimizing Interface Model: Kma = 2.1603e+05, Dm = 1.9038e-04
+Error: 546.6658
+Optimizing Interface Model: Kma = 2.0941e+05, Dm = 1.8840e-04
+Error: 553.4396
+Optimizing Interface Model: Kma = 2.2365e+05, Dm = 6.6619e-04
+Error: 547.3028
+Optimizing Interface Model: Kma = 2.1389e+05, Dm = 3.6831e-04
+Error: 548.0543
+Optimizing Interface Model: Kma = 2.0682e+05, Dm = 4.9672e-04
+Error: 558.2101
+Optimizing Interface Model: Kma = 2.1918e+05, Dm = 4.0845e-04
+Error: 545.9145
+Optimizing Interface Model: Kma = 2.1831e+05, Dm = 7.1889e-05
+Error: 545.9732
+Optimizing Interface Model: Kma = 2.1969e+05, Dm = 3.3706e-04
+Error: 545.9319
+Optimizing Interface Model: Kma = 2.2855e+05, Dm = 9.2233e-04
+Error: 551.8239
+Optimizing Interface Model: Kma = 2.1339e+05, Dm = 3.8495e-04
+Error: 548.4801
+Optimizing Interface Model: Kma = 2.2102e+05, Dm = 2.7044e-04
+Error: 546.1505
+Optimizing Interface Model: Kma = 2.2088e+05, Dm = 9.1099e-04
+Error: 546.1161
+Optimizing Interface Model: Kma = 2.1871e+05, Dm = 5.3695e-04
+Error: 545.9322
+Optimizing Interface Model: Kma = 2.1918e+05, Dm = 3.0845e-04
+Error: 545.9144
+Optimizing Interface Model: Kma = 2.1868e+05, Dm = 1.3012e-04
+Error: 545.9346
+Optimizing Interface Model: Kma = 2.2369e+05, Dm = 3.1115e-04
+Error: 547.3266
+Optimizing Interface Model: Kma = 2.2499e+05, Dm = 7.6085e-05
+Error: 548.2427
+Optimizing Interface Model: Kma = 2.2723e+05, Dm = 6.3088e-04
+Error: 550.3123
+Optimizing Interface Model: Kma = 2.2085e+05, Dm = 6.7062e-04
+Error: 546.1100
+Optimizing Interface Model: Kma = 2.1846e+05, Dm = 3.3215e-04
+Error: 545.9544
+Optimizing Interface Model: Kma = 2.1952e+05, Dm = 3.5341e-04
+Error: 545.9215
+Optimizing Interface Model: Kma = 2.1952e+05, Dm = 2.2056e-04
+Error: 545.9218
+Optimizing Interface Model: Kma = 2.1896e+05, Dm = 3.8570e-04
+Error: 545.9185
+Optimizing Interface Model: Kma = 2.1070e+05, Dm = 2.6767e-04
+Error: 551.5372
+Optimizing Interface Model: Kma = 2.1610e+05, Dm = 7.3447e-04
+Error: 546.6330
+Optimizing Interface Model: Kma = 2.1634e+05, Dm = 2.4589e-04
+Error: 546.5244
+Optimizing Interface Model: Kma = 2.2423e+05, Dm = 1.6876e-04
+Error: 547.6772
+Optimizing Interface Model: Kma = 2.2365e+05, Dm = 3.8268e-04
+Error: 547.3003
+Optimizing Interface Model: Kma = 2.1852e+05, Dm = 6.5949e-04
+Error: 545.9482
+Optimizing Interface Model: Kma = 2.2301e+05, Dm = 7.5232e-05
+Error: 546.9372
+Optimizing Interface Model: Kma = 2.1984e+05, Dm = 2.0740e-04
+Error: 545.9436
+Optimizing Interface Model: Kma = 2.2045e+05, Dm = 2.7141e-04
+Error: 546.0269
+Optimizing Interface Model: Kma = 2.1819e+05, Dm = 6.6619e-04
+Error: 545.9894
+Optimizing Interface Model: Kma = 2.1937e+05, Dm = 3.0065e-04
+Error: 545.9163
+Optimizing Interface Model: Kma = 2.1874e+05, Dm = 5.1108e-04
+Error: 545.9300
+Optimizing Interface Model: Kma = 2.1938e+05, Dm = 3.0448e-04
+Error: 545.9165
+Optimizing Interface Model: Kma = 2.1865e+05, Dm = 2.8702e-04
+Error: 545.9367
+Optimizing Interface Model: Kma = 2.1997e+05, Dm = 4.7977e-04
+Error: 545.9570
+Optimizing Interface Model: Kma = 2.1758e+05, Dm = 4.4732e-04
+Error: 546.1092
+Optimizing Interface Model: Kma = 2.1858e+05, Dm = 3.6284e-04
+Error: 545.9426
+Optimizing Interface Model: Kma = 2.1802e+05, Dm = 3.3811e-04
+Error: 546.0165
+Optimizing Interface Model: Kma = 2.2085e+05, Dm = 3.8232e-04
+Error: 546.1086
+Optimizing Interface Model: Kma = 2.1871e+05, Dm = 5.7552e-05
+Error: 545.9323
+Optimizing Interface Model: Kma = 2.1982e+05, Dm = 3.4381e-04
+Error: 545.9424
+Optimizing Interface Model: Kma = 2.2198e+05, Dm = 3.2183e-04
+Error: 546.4608
+Optimizing Interface Model: Kma = 2.2062e+05, Dm = 1.2360e-04
+Error: 546.0592
+Optimizing Interface Model: Kma = 2.1931e+05, Dm = 2.0060e-04
+Error: 545.9152
+Optimizing Interface Model: Kma = 2.1774e+05, Dm = 1.4485e-04
+Error: 546.0708
+Optimizing Interface Model: Kma = 2.1988e+05, Dm = 2.1025e-04
+Error: 545.9471
+Optimizing Interface Model: Kma = 2.1872e+05, Dm = 5.3529e-04
+Error: 545.9312
+Optimizing Interface Model: Kma = 2.1932e+05, Dm = 2.2456e-04
+Error: 545.9154
+Optimizing Interface Model: Kma = 2.1952e+05, Dm = 3.9233e-04
+Error: 545.9219
+Optimizing Interface Model: Kma = 2.1989e+05, Dm = 3.7076e-04
+Error: 545.9480
+Optimizing Interface Model: Kma = 2.1970e+05, Dm = 2.7819e-04
+Error: 545.9320
+Optimizing Interface Model: Kma = 2.1692e+05, Dm = 3.8547e-04
+Error: 546.2999
+Optimizing Interface Model: Kma = 2.1986e+05, Dm = 4.4203e-04
+Error: 545.9452
+Optimizing Interface Model: Kma = 2.1882e+05, Dm = 4.3646e-04
+Error: 545.9251
+Optimizing Interface Model: Kma = 2.1756e+05, Dm = 3.9329e-04
+Error: 546.1135
+Optimizing Interface Model: Kma = 2.1749e+05, Dm = 4.8799e-04
+Error: 546.1305
+Optimizing Interface Model: Kma = 2.1883e+05, Dm = 4.2304e-04
+Error: 545.9247
+Optimizing Interface Model: Kma = 2.1975e+05, Dm = 2.0740e-04
+Error: 545.9358
+Optimizing Interface Model: Kma = 2.1883e+05, Dm = 2.6936e-04
+Error: 545.9245
+Optimizing Interface Model: Kma = 2.1915e+05, Dm = 2.5296e-04
+Error: 545.9147
+Optimizing Interface Model: Kma = 2.1957e+05, Dm = 1.9615e-04
+Error: 545.9240
+Optimizing Interface Model: Kma = 2.1978e+05, Dm = 5.1108e-04
+Error: 545.9386
+Optimizing Interface Model: Kma = 2.1915e+05, Dm = 3.4771e-04
+Error: 545.9146
+Optimizing Interface Model: Kma = 2.1865e+05, Dm = 5.2286e-04
+Error: 545.9367
+Optimizing Interface Model: Kma = 2.1735e+05, Dm = 3.2608e-04
+Error: 546.1661
+Optimizing Interface Model: Kma = 2.1956e+05, Dm = 4.4732e-04
+Error: 545.9238
+Optimizing Interface Model: Kma = 2.1858e+05, Dm = 3.6418e-04
+Error: 545.9426
+Optimizing Interface Model: Kma = 2.1958e+05, Dm = 1.6142e-04
+Error: 545.9246
+Optimizing Interface Model: Kma = 2.2085e+05, Dm = 3.2433e-04
+Error: 546.1086
+Optimizing Interface Model: Kma = 2.1973e+05, Dm = 5.1157e-04
+Error: 545.9345
+Optimizing Interface Model: Kma = 2.1885e+05, Dm = 3.5629e-04
+Error: 545.9234
+Optimizing Interface Model: Kma = 2.1995e+05, Dm = 1.3012e-04
+Error: 545.9552
+Optimizing Interface Model: Kma = 2.1957e+05, Dm = 3.1516e-04
+Error: 545.9243
+Optimizing Interface Model: Kma = 2.1836e+05, Dm = 7.2509e-04
+Error: 545.9659
+Optimizing Interface Model: Kma = 2.1978e+05, Dm = 1.4485e-04
+Error: 545.9386
+Optimizing Interface Model: Kma = 2.1837e+05, Dm = 4.1755e-04
+Error: 545.9653
+Optimizing Interface Model: Kma = 2.1849e+05, Dm = 5.3529e-04
+Error: 545.9518
+Optimizing Interface Model: Kma = 2.1906e+05, Dm = 3.8343e-04
+Error: 545.9159
+Optimizing Interface Model: Kma = 2.1940e+05, Dm = 1.9010e-04
+Error: 545.9173
+Optimizing Interface Model: Kma = 2.1957e+05, Dm = 3.1516e-04
+Error: 545.9243
+Optimizing Interface Model: Kma = 2.1990e+05, Dm = 2.7819e-04
+Error: 545.9497
+Optimizing Interface Model: Kma = 2.1927e+05, Dm = 3.8547e-04
+Error: 545.9148
+Optimizing Interface Model: Kma = 2.1991e+05, Dm = 1.6038e-04
+Error: 545.9505
+Optimizing Interface Model: Kma = 2.1995e+05, Dm = 3.8982e-04
+Error: 545.9542
+Optimizing Interface Model: Kma = 2.1930e+05, Dm = 2.6117e-04
+Error: 545.9152
+Optimizing Interface Model: Kma = 2.1937e+05, Dm = 5.0371e-04
+Error: 545.9165
+Optimizing Interface Model: Kma = 2.1942e+05, Dm = 2.2179e-04
+Error: 545.9177
+Optimizing Interface Model: Kma = 2.1937e+05, Dm = 2.0740e-04
+Error: 545.9163
+Optimizing Interface Model: Kma = 2.1915e+05, Dm = 2.6513e-05
+Error: 545.9149
+Optimizing Interface Model: Kma = 2.1888e+05, Dm = 2.1458e-04
+Error: 545.9220
+Optimizing Interface Model: Kma = 2.1937e+05, Dm = 2.2235e-04
+Error: 545.9163
+Optimizing Interface Model: Kma = 2.1927e+05, Dm = 4.2867e-04
+Error: 545.9147
+Optimizing Interface Model: Kma = 2.1933e+05, Dm = 2.1156e-04
+Error: 545.9156
+Optimizing Interface Model: Kma = 2.1846e+05, Dm = 3.0457e-04
+Error: 545.9548
+Optimizing Interface Model: Kma = 2.1933e+05, Dm = 9.7975e-05
+Error: 545.9156
+Optimizing Interface Model: Kma = 2.1860e+05, Dm = 4.0753e-04
+Error: 545.9410
+Optimizing Interface Model: Kma = 2.1903e+05, Dm = 3.6418e-04
+Error: 545.9165
+Optimizing Interface Model: Kma = 2.1910e+05, Dm = 1.8618e-04
+Error: 545.9151
+Optimizing Interface Model: Kma = 2.1992e+05, Dm = 1.5104e-04
+Error: 545.9512
+Optimizing Interface Model: Kma = 2.1906e+05, Dm = 2.2142e-04
+Error: 545.9160
+Optimizing Interface Model: Kma = 2.1892e+05, Dm = 3.1505e-04
+Error: 545.9204
+Optimizing Interface Model: Kma = 2.1887e+05, Dm = 1.8398e-04
+Error: 545.9223
+Optimizing Interface Model: Kma = 2.1891e+05, Dm = 3.4036e-04
+Error: 545.9206
+Optimizing Interface Model: Kma = 2.1936e+05, Dm = 2.0060e-04
+Error: 545.9162
+Optimizing Interface Model: Kma = 2.1978e+05, Dm = 4.8193e-04
+Error: 545.9386
+Optimizing Interface Model: Kma = 2.1879e+05, Dm = 1.3918e-04
+Error: 545.9270
+Optimizing Interface Model: Kma = 2.1868e+05, Dm = 3.9903e-04
+Error: 545.9344
+Optimizing Interface Model: Kma = 2.1866e+05, Dm = 2.2456e-04
+Error: 545.9361
+Optimizing Interface Model: Kma = 2.1940e+05, Dm = 2.0191e-04
+Error: 545.9173
+Optimizing Interface Model: Kma = 2.1894e+05, Dm = 2.0470e-04
+Error: 545.9193
+Optimizing Interface Model: Kma = 2.1893e+05, Dm = 2.6427e-04
+Error: 545.9196
+Optimizing Interface Model: Kma = 2.1927e+05, Dm = 2.9945e-04
+Error: 545.9148
+Optimizing Interface Model: Kma = 2.1885e+05, Dm = 4.6533e-04
+Error: 545.9235
+Optimizing Interface Model: Kma = 2.1919e+05, Dm = 2.6490e-04
+Error: 545.9143
+Optimizing Interface Model: Kma = 2.1930e+05, Dm = 5.9328e-05
+Error: 545.9152
+Optimizing Interface Model: Kma = 2.1924e+05, Dm = 3.5863e-04
+Error: 545.9143
+Optimizing Interface Model: Kma = 2.1928e+05, Dm = 3.4567e-04
+Error: 545.9149
+Optimizing Interface Model: Kma = 2.1894e+05, Dm = 2.0740e-04
+Error: 545.9193
+Optimizing Interface Model: Kma = 2.1919e+05, Dm = 2.1654e-04
+Error: 545.9142
+Optimizing Interface Model: Kma = 2.1903e+05, Dm = 1.2283e-04
+Error: 545.9164
+Optimizing Interface Model: Kma = 2.1937e+05, Dm = 3.8042e-04
+Error: 545.9163
+Optimizing Interface Model: Kma = 2.1933e+05, Dm = 1.4740e-04
+Error: 545.9155
+Optimizing Interface Model: Kma = 2.1930e+05, Dm = 3.4771e-04
+Error: 545.9150
+Optimizing Interface Model: Kma = 2.1920e+05, Dm = 1.9162e-04
+Error: 545.9145
+Optimizing Interface Model: Kma = 2.1903e+05, Dm = 2.5973e-04
+Error: 545.9166
+Optimizing Interface Model: Kma = 2.1922e+05, Dm = 1.9570e-04
+Error: 545.9144
+Optimizing Interface Model: Kma = 2.1903e+05, Dm = 2.5658e-04
+Error: 545.9165
+Optimizing Interface Model: Kma = 2.1951e+05, Dm = 1.3080e-04
+Error: 545.9210
+Optimizing Interface Model: Kma = 2.1945e+05, Dm = 7.5287e-04
+Error: 545.9189
+Optimizing Interface Model: Kma = 2.1953e+05, Dm = 2.2142e-04
+Error: 545.9221
+Optimizing Interface Model: Kma = 2.1919e+05, Dm = 1.5507e-04
+Error: 545.9144
+Optimizing Interface Model: Kma = 2.1912e+05, Dm = 3.1455e-04
+Error: 545.9149
+Optimizing Interface Model: Kma = 2.1888e+05, Dm = 1.2029e-04
+Error: 545.9218
+Optimizing Interface Model: Kma = 2.1931e+05, Dm = 3.9490e-04
+Error: 545.9152
+Optimizing Interface Model: Kma = 2.1930e+05, Dm = 6.3786e-05
+Error: 545.9151
+Optimizing Interface Model: Kma = 2.1879e+05, Dm = 2.5029e-04
+Error: 545.9270
+Optimizing Interface Model: Kma = 2.1941e+05, Dm = 1.3030e-04
+Error: 545.9176
+Optimizing Interface Model: Kma = 2.1892e+05, Dm = 2.2456e-04
+Error: 545.9201
+Optimizing Interface Model: Kma = 2.1908e+05, Dm = 3.6478e-04
+Error: 545.9153
+Optimizing Interface Model: Kma = 2.1914e+05, Dm = 8.7209e-05
+Error: 545.9147
+Optimizing Interface Model: Kma = 2.1918e+05, Dm = 2.4702e-04
+Error: 545.9144
+Optimizing Interface Model: Kma = 2.1970e+05, Dm = 6.8638e-04
+Error: 545.9327
+Optimizing Interface Model: Kma = 2.1906e+05, Dm = 4.0774e-04
+Error: 545.9157
+Optimizing Interface Model: Kma = 2.1937e+05, Dm = 3.7995e-04
+Error: 545.9165
+Optimizing Interface Model: Kma = 2.1932e+05, Dm = 5.9328e-05
+Error: 545.9154
+Optimizing Interface Model: Kma = 2.1919e+05, Dm = 3.6414e-04
+Error: 545.9143
+Optimizing Interface Model: Kma = 2.1911e+05, Dm = 4.0385e-04
+Error: 545.9150
+Optimizing Interface Model: Kma = 2.1922e+05, Dm = 2.0740e-04
+Error: 545.9144
+Optimizing Interface Model: Kma = 2.1947e+05, Dm = 3.7619e-04
+Error: 545.9198
+Optimizing Interface Model: Kma = 2.1915e+05, Dm = 6.3936e-04
+Error: 545.9147
+Optimizing Interface Model: Kma = 2.1909e+05, Dm = 2.2028e-04
+Error: 545.9153
+Optimizing Interface Model: Kma = 2.1929e+05, Dm = 2.2268e-04
+Error: 545.9150
+Optimizing Interface Model: Kma = 2.1892e+05, Dm = 1.8200e-04
+Error: 545.9202
+Optimizing Interface Model: Kma = 2.1905e+05, Dm = 9.4439e-05
+Error: 545.9161
+Optimizing Interface Model: Kma = 2.1928e+05, Dm = 8.6873e-05
+Error: 545.9149
+Optimizing Interface Model: Kma = 2.1922e+05, Dm = 1.5471e-04
+Error: 545.9144
+Optimizing Interface Model: Kma = 2.1929e+05, Dm = 1.8101e-04
+Error: 545.9150
+Optimizing Interface Model: Kma = 2.1894e+05, Dm = 3.9606e-04
+Error: 545.9194
+Optimizing Interface Model: Kma = 2.1908e+05, Dm = 1.1062e-04
+Error: 545.9155
+Optimizing Interface Model: Kma = 2.1943e+05, Dm = 2.7863e-04
+Error: 545.9181
+Optimizing Interface Model: Kma = 2.1922e+05, Dm = 3.0959e-04
+Error: 545.9145
+Optimizing Interface Model: Kma = 2.1921e+05, Dm = 3.1455e-04
+Error: 545.9144
+Optimizing Interface Model: Kma = 2.1906e+05, Dm = 5.7552e-04
+Error: 545.9158
+Optimizing Interface Model: Kma = 2.1919e+05, Dm = 1.2682e-04
+Error: 545.9145
+Optimizing Interface Model: Kma = 2.1898e+05, Dm = 2.1397e-04
+Error: 545.9180
+Optimizing Interface Model: Kma = 2.1879e+05, Dm = 2.4561e-04
+Error: 545.9270
+Optimizing Interface Model: Kma = 2.1920e+05, Dm = 1.3030e-04
+Error: 545.9144
+Optimizing Interface Model: Kma = 2.1916e+05, Dm = 2.4896e-04
+Error: 545.9145
+Optimizing Interface Model: Kma = 2.1908e+05, Dm = 2.4923e-04
+Error: 545.9155
+Optimizing Interface Model: Kma = 2.1914e+05, Dm = 1.6787e-04
+Error: 545.9147
+Optimizing Interface Model: Kma = 2.1912e+05, Dm = 2.4702e-04
+Error: 545.9150
+Optimizing Interface Model: Kma = 2.1914e+05, Dm = 4.6142e-04
+Error: 545.9146
+Optimizing Interface Model: Kma = 2.1915e+05, Dm = 1.7548e-04
+Error: 545.9146
+Optimizing Interface Model: Kma = 2.1921e+05, Dm = 2.2945e-04
+Error: 545.9146
+Optimizing Interface Model: Kma = 2.1916e+05, Dm = 2.5636e-04
+Error: 545.9146
+Optimizing Interface Model: Kma = 2.1913e+05, Dm = 2.5208e-04
+Error: 545.9148
+Optimizing Interface Model: Kma = 2.1928e+05, Dm = 1.8941e-04
+Error: 545.9150
+Optimizing Interface Model: Kma = 2.1887e+05, Dm = 7.8054e-05
+Error: 545.9223
+Optimizing Interface Model: Kma = 2.1913e+05, Dm = 9.0504e-05
+Error: 545.9148
+Optimizing Interface Model: Kma = 2.1918e+05, Dm = 2.5217e-04
+Error: 545.9143
+Optimizing Interface Model: Kma = 2.1909e+05, Dm = 2.1312e-04
+Error: 545.9152
+Optimizing Interface Model: Kma = 2.1921e+05, Dm = 1.7122e-04
+Error: 545.9143
+Optimizing Interface Model: Kma = 2.1915e+05, Dm = 4.9253e-04
+Error: 545.9147
+Optimizing Interface Model: Kma = 2.1927e+05, Dm = 1.8747e-04
+Error: 545.9147
+Optimizing Interface Model: Kma = 2.1924e+05, Dm = 5.5429e-05
+Error: 545.9145
+Optimizing Interface Model: Kma = 2.1921e+05, Dm = 2.6522e-04
+Error: 545.9143
+Optimizing Interface Model: Kma = 2.1913e+05, Dm = 3.8093e-04
+Error: 545.9147
+Optimizing Interface Model: Kma = 2.1920e+05, Dm = 3.3381e-04
+Error: 545.9144
+Optimizing Interface Model: Kma = 2.1878e+05, Dm = 1.1062e-04
+Error: 545.9276
+Optimizing Interface Model: Kma = 2.1920e+05, Dm = 4.5672e-04
+Error: 545.9143
+Optimizing Interface Model: Kma = 2.1908e+05, Dm = 6.9286e-05
+Error: 545.9156
+Optimizing Interface Model: Kma = 2.1919e+05, Dm = 2.7995e-04
+Error: 545.9143
+Optimizing Interface Model: Kma = 2.1923e+05, Dm = 3.8991e-04
+Error: 545.9144
+Optimizing Interface Model: Kma = 2.1917e+05, Dm = 1.4638e-04
+Error: 545.9145
+Optimizing Interface Model: Kma = 2.1924e+05, Dm = 6.3786e-05
+Error: 545.9145
+Optimizing Interface Model: Kma = 2.1916e+05, Dm = 1.3918e-04
+Error: 545.9144
+Optimizing Interface Model: Kma = 2.1917e+05, Dm = 9.4738e-05
+Error: 545.9145
+Optimizing Interface Model: Kma = 2.1916e+05, Dm = 2.9609e-04
+Error: 545.9145
+Optimizing Interface Model: Kma = 2.1924e+05, Dm = 3.6478e-04
+Error: 545.9145
+Optimizing Interface Model: Kma = 2.1914e+05, Dm = 3.3159e-04
+Error: 545.9147
+Optimizing Interface Model: Kma = 2.1921e+05, Dm = 1.8513e-04
+Error: 545.9144
+Optimizing Interface Model: Kma = 2.1920e+05, Dm = 1.2138e-04
+Error: 545.9145
+Optimizing Interface Model: Kma = 2.1926e+05, Dm = 1.5130e-04
+Error: 545.9147
+Optimizing Interface Model: Kma = 2.1918e+05, Dm = 3.2532e-04
+Error: 545.9144
+Optimizing Interface Model: Kma = 2.1924e+05, Dm = 2.8503e-04
+Error: 545.9146
+Optimizing Interface Model: Kma = 2.1922e+05, Dm = 3.5016e-05
+Error: 545.9145
+Optimizing Interface Model: Kma = 2.1926e+05, Dm = 4.0208e-04
+Error: 545.9147
+Optimizing Interface Model: Kma = 2.1924e+05, Dm = 3.1844e-04
+Error: 545.9144
+Optimizing Interface Model: Kma = 2.1918e+05, Dm = 1.4144e-04
+Error: 545.9145
+Optimizing Interface Model: Kma = 2.1918e+05, Dm = 1.4144e-04
+Error: 545.9145
+Optimizing Interface Model: Kma = 2.1916e+05, Dm = 4.8083e-05
+Error: 545.9147
+Optimizing Interface Model: Kma = 2.1921e+05, Dm = 2.5082e-04
+Error: 545.9144
+Optimizing Interface Model: Kma = 2.1915e+05, Dm = 6.3277e-04
+Error: 545.9147
+Optimizing Interface Model: Kma = 2.1924e+05, Dm = 3.2559e-04
+Error: 545.9144
+Optimizing Interface Model: Kma = 2.1919e+05, Dm = 1.4189e-04
+Error: 545.9144
+Optimizing Interface Model: Kma = 2.1916e+05, Dm = 2.6522e-04
+Error: 545.9145
+Optimizing Interface Model: Kma = 2.1913e+05, Dm = 3.0078e-04
+Error: 545.9148
+Optimizing Interface Model: Kma = 2.1923e+05, Dm = 3.3381e-04
+Error: 545.9145
+Optimizing Interface Model: Kma = 2.1925e+05, Dm = 1.7632e-04
+Error: 545.9146
+Optimizing Interface Model: Kma = 2.1924e+05, Dm = 1.0512e-04
+Error: 545.9144
+Optimizing Interface Model: Kma = 2.1919e+05, Dm = 2.1654e-04
+Error: 545.9142
+Optimizing Interface Model: Kma = 2.1919e+05, Dm = 2.1654e-04
+Error: 545.9142
+Optimizing Interface Model: Kma = 2.1919e+05, Dm = 2.1655e-04
+Error: 545.9142
+Optimized Interface Model: Kma = 2.1919e+05, Dm = 2.1654e-04
+Curve fitting completed. Running simulation with optimized parameters...
