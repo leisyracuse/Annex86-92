@@ -1,0 +1,111 @@
+Running curve fitting...
+Optimizing Interface Model: Kma = 1.0000e+05, Dm = 1.0000e-07
+Error: 3114.1579
+Optimizing Interface Model: Kma = 1.0000e+05, Dm = 1.0000e-07
+Error: 3114.1574
+Optimizing Interface Model: Kma = 1.0000e+05, Dm = 1.0000e-04
+Error: 3113.9844
+Optimizing Interface Model: Kma = 1.0000e+05, Dm = 1.0000e-04
+Error: 3113.9811
+Optimizing Interface Model: Kma = 1.0000e+05, Dm = 1.0000e-04
+Error: 3113.9806
+Optimizing Interface Model: Kma = 1.0000e+05, Dm = 1.0000e-08
+Error: 3115.7177
+Optimizing Interface Model: Kma = 1.0000e+05, Dm = 1.0000e-04
+Error: 3113.9777
+Optimizing Interface Model: Kma = 1.0000e+05, Dm = 1.0000e-04
+Error: 3113.9769
+Optimizing Interface Model: Kma = 1.0000e+05, Dm = 1.0000e-08
+Error: 3115.7151
+Optimizing Interface Model: Kma = 1.0000e+05, Dm = 1.0000e-04
+Error: 3113.9648
+Optimizing Interface Model: Kma = 1.0000e+05, Dm = 1.0000e-04
+Error: 3113.9642
+Optimizing Interface Model: Kma = 1.0000e+05, Dm = 1.0000e-08
+Error: 3115.7012
+Optimizing Interface Model: Kma = 1.0000e+05, Dm = 1.0000e-04
+Error: 3113.9127
+Optimizing Interface Model: Kma = 1.0000e+05, Dm = 1.0000e-04
+Error: 3113.9122
+Optimizing Interface Model: Kma = 1.0000e+05, Dm = 1.0000e-08
+Error: 3115.6498
+Optimizing Interface Model: Kma = 1.0000e+05, Dm = 1.0000e-04
+Error: 3113.7046
+Optimizing Interface Model: Kma = 1.0000e+05, Dm = 1.0000e-04
+Error: 3113.7044
+Optimizing Interface Model: Kma = 1.0000e+05, Dm = 1.0000e-08
+Error: 3115.4416
+Optimizing Interface Model: Kma = 1.0001e+05, Dm = 1.0000e-04
+Error: 3113.5352
+Optimizing Interface Model: Kma = 1.0001e+05, Dm = 1.0000e-04
+Error: 3113.5340
+Optimizing Interface Model: Kma = 1.0001e+05, Dm = 1.0000e-08
+Error: 3115.2720
+Optimizing Interface Model: Kma = 1.0002e+05, Dm = 1.0000e-04
+Error: 3112.8566
+Optimizing Interface Model: Kma = 1.0002e+05, Dm = 1.0000e-04
+Error: 3112.8563
+Optimizing Interface Model: Kma = 1.0002e+05, Dm = 1.0000e-08
+Error: 3114.5929
+Optimizing Interface Model: Kma = 1.0006e+05, Dm = 1.0000e-04
+Error: 3110.1436
+Optimizing Interface Model: Kma = 1.0006e+05, Dm = 1.0000e-04
+Error: 3110.1431
+Optimizing Interface Model: Kma = 1.0006e+05, Dm = 1.0000e-08
+Error: 3111.8793
+Optimizing Interface Model: Kma = 1.0022e+05, Dm = 1.0000e-04
+Error: 3099.3204
+Optimizing Interface Model: Kma = 1.0022e+05, Dm = 1.0000e-04
+Error: 3099.3196
+Optimizing Interface Model: Kma = 1.0022e+05, Dm = 1.0000e-08
+Error: 3101.0530
+Optimizing Interface Model: Kma = 1.0085e+05, Dm = 1.0000e-04
+Error: 3056.4792
+Optimizing Interface Model: Kma = 1.0085e+05, Dm = 1.0000e-04
+Error: 3056.4792
+Optimizing Interface Model: Kma = 1.0085e+05, Dm = 1.0000e-08
+Error: 3058.1999
+Optimizing Interface Model: Kma = 1.0139e+05, Dm = 1.0000e-04
+Error: 3020.8424
+Optimizing Interface Model: Kma = 1.0139e+05, Dm = 1.0000e-04
+Error: 3020.8421
+Optimizing Interface Model: Kma = 1.0139e+05, Dm = 1.0000e-08
+Error: 3022.5518
+Optimizing Interface Model: Kma = 1.0354e+05, Dm = 1.0000e-04
+Error: 2883.2055
+Optimizing Interface Model: Kma = 1.0354e+05, Dm = 1.0000e-04
+Error: 2883.2050
+Optimizing Interface Model: Kma = 1.0354e+05, Dm = 1.0000e-08
+Error: 2884.8732
+Optimizing Interface Model: Kma = 1.1213e+05, Dm = 1.0000e-04
+Error: 2402.6592
+Optimizing Interface Model: Kma = 1.1213e+05, Dm = 1.0000e-04
+Error: 2402.6590
+Optimizing Interface Model: Kma = 1.1213e+05, Dm = 1.0000e-08
+Error: 2404.1690
+Optimizing Interface Model: Kma = 1.2158e+05, Dm = 1.0000e-04
+Error: 1979.8448
+Optimizing Interface Model: Kma = 1.2158e+05, Dm = 1.0000e-04
+Error: 1979.8445
+Optimizing Interface Model: Kma = 1.2158e+05, Dm = 1.0000e-08
+Error: 1981.1977
+Optimizing Interface Model: Kma = 1.5939e+05, Dm = 1.0000e-04
+Error: 965.8036
+Optimizing Interface Model: Kma = 1.5939e+05, Dm = 1.0000e-04
+Error: 965.8035
+Optimizing Interface Model: Kma = 1.5939e+05, Dm = 1.0000e-08
+Error: 966.6830
+Optimizing Interface Model: Kma = 2.0098e+05, Dm = 1.0000e-04
+Error: 472.4419
+Optimizing Interface Model: Kma = 2.0098e+05, Dm = 1.0000e-04
+Error: 472.4417
+Optimizing Interface Model: Kma = 2.0098e+05, Dm = 1.0000e-08
+Error: 473.0040
+Optimizing Interface Model: Kma = 3.6735e+05, Dm = 1.0000e-04
+Error: 83.0026
+Optimizing Interface Model: Kma = 3.6735e+05, Dm = 1.0000e-04
+Error: 83.0026
+Optimizing Interface Model: Kma = 3.6735e+05, Dm = 1.0000e-08
+Error: 83.1026
+Optimized Interface Model: Kma = 3.6735e+05, Dm = 1.0000e-04
+Curve fitting completed. Running simulation with optimized parameters...

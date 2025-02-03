@@ -43,8 +43,8 @@ EnvListWpc_setup() creating Envelope path lists:
 
   3 envelope paths|terminals|leaks for CSM/CEX
 contamx-lib => calling cxs->prjDataReadyFcnP(
-	cxs=[000002737C926E10]
-	cxs->pUserData_prjDataReadyFcn=[000002737F182740]
+	cxs=[000001C4A4BBA080]
+	cxs->pUserData_prjDataReadyFcn=[000001C4D333F6C0]
 )
 Read PRJ : 46216 bytes allocated, 13804 freed, 32412 net
 Number of --
@@ -162,26 +162,3 @@ set_urst_init():
   nzone 3, npath 6, nctm 1, njct 0, ndct 0
   ncss+nbls+ndvr 1, nctrl 11, date0 1, date1 36
   SizeData 416
-
-
-================= SimEnd() called Feb05 24:00:00 =================
-
-   51840 time steps
-   51840 time step iterations
-   51844 calls to SolveAf()
-   51845 calls to FillAf()
-       1 calls to luf_sky_s()
-       1 calls to lus_sky_s()
-   51840 calls to solve_Mft()
-   51840 calls to luf_sky_n()
-   51840 calls to lus_sky_n()
-
-NR its. :    0
-JfacBins: 51844
-
-rangeDWC: 0 lam, 0 trns, 0 turbulent
-
-
-End: 52532 bytes allocated, 18628 freed, 33904 net
-Final: 52532 bytes allocated, 52532 freed, 0 net
-Simulation completed successfully.
