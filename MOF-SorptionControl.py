@@ -40,10 +40,10 @@ CO_SET_CTRL = SINK_SET      # control output (co) set by the controller
 
 '''
 0: single zone
-1: chamber L
-2: chamber H
+1: chamber L (50L, 1ACH, 93ppb HCHO)
+2: chamber H (50L, 1ACH, 260ppb HCHO)
 '''
-sim_case = 1
+sim_case = 2
 
 match sim_case:
     case 0:
@@ -51,8 +51,10 @@ match sim_case:
     case 1:
         material = SorptionMaterial(Am = 0.09, Km = 4.528e-4, a = -0.29, b = 743.05, Kma = 4.05e5, Dm = 9.99e-7) # define sorption material
     case 2: 
-        material = SorptionMaterial(Am = 0.09, Km = 1e-5, a = -10.908, b = 9333.1, Kma = 4.05e5, Dm = 9.99e-7) # define sorption material
+        material = SorptionMaterial(Am = 0.09, Km = 1.136e-3, a = -0.01, b = 1272.99, Kma = 4.05e5, Dm = 9.99e-7) # define sorption material
+        # original parameters: material = SorptionMaterial(Am = 0.09, Km = 1e-5, a = -10.908, b = 9333.1, Kma = 4.05e5, Dm = 9.99e-7) # define sorption material
 
+sim_mode = 1  # 0: Polynomial, 1: InterfaceModel (diffusion model)
 
 # ====================================================== check_controls() =====
 
@@ -178,11 +180,18 @@ def main():
     # USER INPUT - Initialize controller class.
     # =========================================================================
 
-    # Polynomial model for adsorption of pollutants on material surface.
-    # sorption_sink = Polynomial(material)
-
-    # Material-Air Interface Model for adsorption of pollutants on material surface.
-    sorption_sink = InterfaceModel(material)
+    # ----- Initialize sorption sink model
+    if sim_mode == 0:
+        # Polynomial model for adsorption of pollutants on material surface.
+        sorption_sink = Polynomial(material)
+        print("Sim model settings => polynomial model")
+    elif sim_mode == 1:
+        # Material-Air Interface Model for adsorption of pollutants on material surface.
+        sorption_sink = InterfaceModel(material)
+        print("Sim model settings => interface (diffusion) model")
+    else:
+        print("Invalid sim_mode. Choose 0 or 1.")
+        return
 
     # ----- Get simulation run info
     start_day = my_prj.getSimStartDate()
@@ -231,6 +240,13 @@ def main():
     mat_diff = Diffusion(material)
     mat_diff.gen_mesh(depth = 4e-3, delta_y = 4e-4)
 
+    # if sim_mode == 1, export concentration distribution in material, save to file (save Cm_array)
+    if sim_mode == 1:
+        mat_Cm_dist_print = "Material Concentration Distribution [ug/m3] at y depths [m]\n"
+        mat_Cm_dist_print += "day\ttime\t" + "\t".join([f"y={y:.4f}" for y in mat_diff.y_array]) + "\n"
+        mat_Cm_dist_print += f"{current_date}\t{current_time}\t" + "\t".join([f"{Cm:.4f}" for Cm in mat_diff.Cm_array]) + "\n"
+
+
     # =========================================================================
     # Run Simulation
     # =========================================================================
@@ -241,17 +257,21 @@ def main():
         # =====================================================================
         # Calculate sorption rate S, adsorbed mass Ms, and gas phase conc on material surface Cm, based on room air conc Ca
 
-        # Polynomial model for adsorption of pollutants on material surface.
-        # S = sorption_sink.get_S(Ca)
-        # Ms = sorption_sink.get_Ms(dt)
-        # Cm = sorption_sink.get_Cm()
+        if sim_mode == 0:
+            # Polynomial model for adsorption of pollutants on material surface.
+            S = sorption_sink.get_S(Ca)
+            Ms = sorption_sink.get_Ms(dt)
+            Cm = sorption_sink.get_Cm()
+        elif sim_mode == 1:
+            # Material-Air Interface Model for adsorption of pollutants on material surface.
+            S = sorption_sink.get_S(Ca)
+            Ms = sorption_sink.get_Ms(dt)
+            # Cm_array = mat_diff.solve_crank_nicolson(dt, S)
+            Cm_array = mat_diff.solve_implicit_central(dt, S)
+            Cm = sorption_sink.get_Cm(Cm_array[-1])
 
-        # Material-Air Interface Model for adsorption of pollutants on material surface.
-        S = sorption_sink.get_S(Ca)
-        Ms = sorption_sink.get_Ms(dt)
-        # Cm_array = mat_diff.solve_crank_nicolson(dt, S)
-        Cm_array = mat_diff.solve_implicit_central(dt, S)
-        Cm = sorption_sink.get_Cm(Cm_array[-1])
+            # export concentration distribution in material, save to file (save Cm_array)
+            mat_Cm_dist_print += f"{current_date}\t{current_time}\t" + "\t".join([f"{Cm:.4f}" for Cm in mat_diff.Cm_array]) + "\n"
         
         my_prj.setInputControlValue(CO_SET_CTRL.index, -1 * S) # Set sorption sink to negative because it is defined with a generation rate in PRJ
 
@@ -268,15 +288,14 @@ def main():
         Ca = my_prj.getOutputControlValue(PV_PASS_CTRL.index)
         print(f"{current_date}\t{current_time}\t{Ca}\t{S}\t{Ms}\t{Cm}")
 
-        # # visualize concentration distribution in material
-        # if i % 100 == 0:
-        #     mat_diff.plot_concentration_distribution(Cm_array, i)
-        # print(f"Cm_array: {Cm_array}")
-
     my_prj.endSimulation()
 
-# --- End main() ---#
+    if sim_mode == 1:
+            # save mat_Cm_dist_print to file
+            with open("mat_Cm_dist.txt", "w") as f:
+                f.write(mat_Cm_dist_print)
 
+# --- End main() ---#
 
 if __name__ == "__main__":
     main()

@@ -1,3 +1,11 @@
-python -m MOF-SorptionControl 0-SingleZone.prj -t
+python -m Python_Doc_Without_Extension CONTAM_PRJ_File.prj -t
 
-python -m MOF-SorptionControl 0-SingleZone.prj > out.txt
+python -m Python_Doc_Without_Extension CONTAM_PRJ_File.prj > out.txt
+
+python -m MOF-Sorption_Control 1-Chamber_L.prj > 1-Chamber_L_Polynomial.txt
+
+python -m MOF-Sorption_Control 1-Chamber_L.prj > 1-Chamber_L_Interface.txt
+
+python -m MOF-Sorption_Control 2-Chamber_H.prj > 2-Chamber_H_Polynomial.txt
+
+python -m MOF-Sorption_Control 2-Chamber_H.prj > 2-Chamber_H_Interface.txt

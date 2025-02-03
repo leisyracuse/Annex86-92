@@ -11,6 +11,7 @@ from dataclasses import dataclass
 import math
 import numpy as np
 
+# =============================================== class SorptionMaterial ====
 
 @dataclass
 class SorptionMaterial:
@@ -373,7 +374,6 @@ class Polynomial(Sorption):
         self.Cm = Cm
         return Cm
     
-
 class InterfaceModel(Sorption):
     """
     Material-Air Interface Model for adsorption of pollutants on material surface.

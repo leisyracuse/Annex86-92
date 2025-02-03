@@ -1,4 +1,4 @@
-ContamW 3.4.0.4 0
+ContamW 3.4.0.5 0
 
 ! rows cols ud uf    T   uT     N     wH  u  Ao    a
     58   66  0  0 293.150 2    0.00 10.00 0 0.600 0.280
@@ -231,7 +231,7 @@ Constant value
 ! Z#       HCHO
    1  0.000e+00
    2  0.000e+00
-   3  9.634e-08
+   3  0.000e+00
 -999
 6 ! flow paths:
 ! P#    f  n#  m#  e#  f#  w#  a#  s#  c#  l#    X       Y      relHt  mult wPset wPmod wazm Fahs Xmax Xmin icn dir u[4] cdvf <cdvfName> cfd <cfdData[4]>
