@@ -1,0 +1,20 @@
+Project:  0-SingleZone.prj
+
+1	contaminants
+Name	EffDens	MeanDiameter
+HCHO	     0	     0
+
+Contaminant source/sink summary.
+1	source/sinks
+s/s#	type	species	zn#	As	mult	Xmin	Xmax	Ymin	Ymax	Zmin	Zmax	released	removed	stored [kg]
+1	ccf	HCHO	1	   0	   1	   0	   0	   0	   0	   0	   0	-2.940819e-06	0.000000e+00	0
+
+Interactions with ambient.
+contaminant	mass from	mass to [kg]
+HCHO	4.31334e-06	1.37035e-06
+
+Simulation time:
+2678400	seconds
+744	hours
+31	days
+

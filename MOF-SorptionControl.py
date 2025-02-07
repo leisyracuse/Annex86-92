@@ -39,23 +39,26 @@ PV_PASS_CTRL = HCHO_ROOM    # process value (pv) passed to controller
 CO_SET_CTRL = SINK_SET      # control output (co) set by the controller
 
 '''
-0: single zone
+0: single zone --> only used for validating the model
 1: chamber L (50L, 1ACH, 93ppb HCHO)
-2: chamber H (50L, 1ACH, 260ppb HCHO)
+2: chamber H (50L, 2ACH, 260ppb HCHO)
+3: room (30m3, 5.674L/s, 32ug/m3 HCHO)
 '''
-sim_case = 1
+sim_case = 2
 
 match sim_case:
     case 0:
         material = SorptionMaterial(Am = 0.045, Km = 9.5e-4, a = -44.03, b = 3751.57, Kma = 4.05e5, Dm = 9.99e-7) # define sorption material
     case 1:
-        material = SorptionMaterial(Am = 0.09, Km = 4.528e-4, a = -0.29, b = 743.05, Kma = 1e5, Dm = 1e-7) # define sorption material
+        material = SorptionMaterial(Am = 0.09, Km = 4.528e-4, a = -0.29, b = 743.05, Kma = 1.4743e+05, Dm = 3.6745e-04) # define sorption material; fit to chamber L data
     case 2: 
-        material = SorptionMaterial(Am = 0.09, Km = 1.136e-3, a = -0.01, b = 1272.99, Kma = 4.05e5, Dm = 9.99e-7) # define sorption material
+        material = SorptionMaterial(Am = 0.09, Km = 1.136e-3, a = -0.01, b = 1272.99, Kma = 1.4743e+05, Dm = 3.6745e-04) # define sorption material; fit to chamber L data (didn't use chamber H data)
         # original parameters: material = SorptionMaterial(Am = 0.09, Km = 1e-5, a = -10.908, b = 9333.1, Kma = 4.05e5, Dm = 9.99e-7) # define sorption material
-
+    case 3: 
+        material = SorptionMaterial(Am = 10, Km = 4.528e-4, a = -0.29, b = 743.05, Kma = 1.4743e+05, Dm = 3.6745e-04) # define sorption material; fit to chamber L data (didn't use chamber H data)
+    
 sim_mode = 1  # 0: Polynomial, 1: InterfaceModel (diffusion model)
-
+print_mat_diff = False  # unable material diffusion distribution print when expected output is too large
 
 # ========================================= Curve Fitting Function =========================================
 def run_simulation_and_get_results(args):
@@ -95,27 +98,27 @@ def curve_fitting(args):
         print(f"Error: {error:.4f}")
         return error
 
-    # # Optimization method: minimize (L-BFGS-B)
-    # # Initial guesses & bounds
-    # if sim_mode == 0:
-    #     initial_guess = [material.a, material.b]
-    #     param_bounds = [(-1000, 10000), (-1000, 10000)]
-    # else:
-    #     initial_guess = [material.Kma, material.Dm]
-    #     param_bounds = [(1e5, 1e7), (1e-8, 1e-4)]
-    # # Optimize parameters
-    # result = minimize(objective, initial_guess, bounds=param_bounds, method='L-BFGS-B', 
-    #                   options={'eps': 1e-2, 'ftol': 1e-6, 'maxiter': 500})
-
-    # Alternative optimization method: Differential Evolution
-    # Parameter bounds (wider for exploration)
+    # Optimization method: minimize (L-BFGS-B)
+    # Initial guesses & bounds
     if sim_mode == 0:
-        param_bounds = [(-5000, 5000), (-5000, 5000)]
+        initial_guess = [material.a, material.b]
+        param_bounds = [(-1000, 10000), (-1000, 10000)]
     else:
-        param_bounds = [(1e4, 1e8), (1e-9, 1e-3)]  # More relaxed bounds
-    # Use global optimization (differential evolution)
-    result = differential_evolution(objective, bounds=param_bounds, strategy='best1bin',
-                                    mutation=(0.5, 1.0), recombination=0.7, tol=1e-6, seed=42)
+        initial_guess = [material.Kma, material.Dm]
+        param_bounds = [(1e4, 1e8), (1e-9, 1e-3)] # original: [(1e5, 1e7), (1e-8, 1e-4)]
+    # Optimize parameters
+    result = minimize(objective, initial_guess, bounds=param_bounds, method='L-BFGS-B', 
+                      options={'eps': 1e-2, 'ftol': 1e-6, 'maxiter': 500})
+
+    # # Alternative optimization method: Differential Evolution
+    # # Parameter bounds (wider for exploration)
+    # if sim_mode == 0:
+    #     param_bounds = [(-5000, 5000), (-5000, 5000)]
+    # else:
+    #     param_bounds = [(1e4, 1e8), (1e-9, 1e-3)]  # More relaxed bounds
+    # # Use global optimization (differential evolution)
+    # result = differential_evolution(objective, bounds=param_bounds, strategy='best1bin',
+    #                                 mutation=(0.5, 1.0), recombination=0.7, tol=1e-6, seed=42)
 
     # Update material properties with optimized values
     if sim_mode == 0:
@@ -146,12 +149,18 @@ def run_simulation(prj_file_path, verbose, test, fitting):
     """
     Runs the full simulation process, using either default or optimized parameters.
     """
+    # ----- Initialize contamx-lib object w/ wp_mode and cb_option.
+    #   wp_mode = 0 => use wind pressure profiles, WTH and CTM files or
+    # associated API calls.
+    #   cb_option = True => set callback function to get PRJ INFO
+    # from the ContamXState.
     my_prj = cxLib(prj_file_path, 0, True, callback_set_initial_values)
     my_prj.setVerbosity(verbose)
 
-    if my_prj.setupSimulation(1) > 0:
-        print("ERROR: Invalid simulation parameters.")
-        print(f"ABORT - sim_not_ok Returned by setupSimulation() = {my_prj.setupSimulation(1)}")
+    # ----- Setup Simulation for PRJ
+    sim_not_ok = my_prj.setupSimulation(1)
+    if sim_not_ok > 0:
+        print(f"ABORT - sim_not_ok Returned by setupSimulation() = {sim_not_ok}")
         print(" => invalid simulation parameters for co-simulation.")
         my_prj.endSimulation()
         sys.exit(1)
@@ -160,21 +169,22 @@ def run_simulation(prj_file_path, verbose, test, fitting):
     if err_count > 0 or test is True:
         return
     
-    # Initialize sorption model
+    # =========================================================================
+    # USER INPUT - Initialize controller class.
+    # =========================================================================
+
+    # ----- Initialize sorption model
     if sim_mode == 0:
+        # Polynomial model for adsorption of pollutants on material surface.
         sorption_sink = Polynomial(material)
         if not fitting: print("Sim model: Polynomial")
     elif sim_mode == 1:
+        # Material-Air Interface Model for adsorption of pollutants on material surface.
         sorption_sink = InterfaceModel(material)
         if not fitting: print("Sim model: Interface")
     else:
-        print("ERROR: Invalid simulation mode.")
+        print("ERROR: Invalid simulation mode. Choose 0 or 1 for Polynomial or Interface model.")
         sys.exit(1)
-
-    # Initialize diffusion model if needed
-    if sim_mode == 1:
-        mat_diff = Diffusion(material)
-        mat_diff.gen_mesh(depth=4e-3, delta_y=4e-4)
 
     # Get simulation details
     # ----- Get simulation run info
@@ -222,33 +232,47 @@ def run_simulation(prj_file_path, verbose, test, fitting):
         print(f"{current_date}\t{current_time}\t{Ca}\t0\t0\t0") # print initial values
     Ms = 0 # initial adsorbed mass [ug/m2]
 
-    if fitting:
-        T_array = []
-        Ca_array = []
+    # Initialize arrays for storing fitting data
+    T_array = []
+    Ca_array = []
 
-    # initialize material diffusion model
-    mat_diff = Diffusion(material)
-    mat_diff.gen_mesh(depth = 4e-3, delta_y = 4e-4)
+    # Initialize diffusion model if needed
+    if sim_mode == 1:
+        mat_diff = Diffusion(material)
+        mat_diff.gen_mesh(depth=4e-3, delta_y=4e-4)
 
     # if sim_mode == 1, export concentration distribution in material, save to file (save Cm_array)
-    if sim_mode == 1:
+    if sim_mode == 1 and print_mat_diff:
         mat_Cm_dist_print = "Material Concentration Distribution [ug/m3] at y depths [m]\n"
         mat_Cm_dist_print += "day\ttime\t" + "\t".join([f"y={y:.4f}" for y in mat_diff.y_array]) + "\n"
         mat_Cm_dist_print += f"{current_date}\t{current_time}\t" + "\t".join([f"{Cm:.4f}" for Cm in mat_diff.Cm_array]) + "\n"
 
+    # =========================================================================
+    # Run Simulation
+    # =========================================================================
+    
     for i in range(num_time_steps):
+        # =====================================================================
+        # Tasks to perform BEFORE current time step.
+        # =====================================================================
         if sim_mode == 0:
+            # Polynomial model
             S = sorption_sink.get_S(Ca)
             Ms = sorption_sink.get_Ms(dt)
             Cm = sorption_sink.get_Cm()
-        else:
+        elif sim_mode == 1:
+            # Interface model
             S = sorption_sink.get_S(Ca)
             Ms = sorption_sink.get_Ms(dt)
-            Cm_array = mat_diff.solve_implicit_central(dt, S)
+            Cm_array = mat_diff.solve_implicit_central(dt, S) # choose the preferred method
             Cm = sorption_sink.get_Cm(Cm_array[-1])
 
             # export concentration distribution in material, save to file (save Cm_array)
-            mat_Cm_dist_print += f"{current_date}\t{current_time}\t" + "\t".join([f"{Cm:.4f}" for Cm in mat_diff.Cm_array]) + "\n"
+            if print_mat_diff:
+                mat_Cm_dist_print += f"{current_date}\t{current_time}\t" + "\t".join([f"{Cm:.4f}" for Cm in mat_diff.Cm_array]) + "\n"
+        else:
+            print("ERROR: Invalid simulation mode. Choose 0 or 1 for Polynomial or Interface model.")
+            sys.exit(1)
 
         my_prj.setInputControlValue(CO_SET_CTRL.index, -1 * S)
 
@@ -264,6 +288,7 @@ def run_simulation(prj_file_path, verbose, test, fitting):
         current_time = my_prj.getCurrentTimeInSec()
         Ca = my_prj.getOutputControlValue(PV_PASS_CTRL.index)
         if fitting:
+            # Store data for fitting
             T_array.append(i * dt)
             Ca_array.append(Ca)
         if not fitting: 
@@ -271,7 +296,7 @@ def run_simulation(prj_file_path, verbose, test, fitting):
 
     my_prj.endSimulation()
 
-    if sim_mode == 1 and not fitting:
+    if sim_mode == 1 and not fitting and print_mat_diff:
             # save mat_Cm_dist_print to file
             with open("mat_Cm_dist.txt", "w") as f:
                 f.write(mat_Cm_dist_print)
@@ -355,6 +380,15 @@ def main():
     parser.set_defaults(verbose=0, test=False, fitting=None)
     args = parser.parse_args()
 
+    if not os.path.exists(args.filename):
+        print(f"ERROR: PRJ file not found: {args.filename}")
+        return
+    msg_cmd = args
+    print(msg_cmd, "\n")
+
+    if args.verbose > 1:
+        print(f"cxLib attributes =>\n{chr(10).join(map(str, dir(cxLib)))}\n")
+
     # Validate fitting argument
     if args.fitting:
         if not os.path.exists(args.fitting):
@@ -369,7 +403,7 @@ def main():
         return
 
     # Run simulation
-    run_simulation(args.filename, args.verbose, args.test)
+    run_simulation(args.filename, args.verbose, args.test, args.fitting)
 
 
 # ========================================= Run Script =========================================

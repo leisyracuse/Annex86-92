@@ -10,6 +10,8 @@ python -m MOF-Sorption_Control 2-Chamber_H.prj > 2-Chamber_H_Polynomial.txt
 
 python -m MOF-Sorption_Control 2-Chamber_H.prj > 2-Chamber_H_Interface.txt
 
+python -m MOF-Sorption_Control "1-Chamber_L\1-Chamber_L.prj" > 1-Chamber_L_Polynomial.txt
+
 # curve fitting for optimized parameters (Kma, Dm)
 
-python -m MOF-Sorption_Control 1-Chamber_L.prj -f "Chamber_L_experiment.csv" > out.txt
+python -m MOF-Sorption_Control 1-Chamber_L.prj -f Chamber_L_experiment.csv > out.txt

@@ -1,0 +1,20 @@
+Project:  2-Chamber_H_full_year\2-Chamber_H_full_year.prj
+
+1	contaminants
+Name	EffDens	MeanDiameter
+HCHO	     0	     0
+
+Contaminant source/sink summary.
+1	source/sinks
+s/s#	type	species	zn#	As	mult	Xmin	Xmax	Ymin	Ymax	Zmin	Zmax	released	removed	stored [kg]
+1	ccf	HCHO	1	   0	   1	   0	   0	   0	   0	   0	   0	-3.692357e-05	0.000000e+00	0
+
+Interactions with ambient.
+contaminant	mass from	mass to [kg]
+HCHO	2.83739e-04	2.46799e-04
+
+Simulation time:
+31536000	seconds
+8760	hours
+365	days
+
