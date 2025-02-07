@@ -7,11 +7,11 @@ HCHO	     0	     0
 Contaminant source/sink summary.
 1	source/sinks
 s/s#	type	species	zn#	As	mult	Xmin	Xmax	Ymin	Ymax	Zmin	Zmax	released	removed	stored [kg]
-1	ccf	HCHO	1	   0	   1	   0	   0	   0	   0	   0	   0	-7.794565e-06	0.000000e+00	0
+1	ccf	HCHO	1	   0	   1	   0	   0	   0	   0	   0	   0	-1.228823e-05	0.000000e+00	0
 
 Interactions with ambient.
 contaminant	mass from	mass to [kg]
-HCHO	2.17822e-05	1.39846e-05
+HCHO	2.17822e-05	9.49005e-06
 
 Simulation time:
 3110400	seconds

@@ -52,7 +52,7 @@ match sim_case:
     case 1:
         material = SorptionMaterial(Am = 0.09, Km = 4.528e-4, a = -0.29, b = 743.05, Kma = 1.4743e+05, Dm = 3.6745e-04) # define sorption material; fit to chamber L data
     case 2: 
-        material = SorptionMaterial(Am = 0.09, Km = 1.136e-3, a = -0.01, b = 1272.99, Kma = 3.2375e+05, Dm = 1e-10) # define sorption material; fit to chamber L data (didn't use chamber H data)
+        material = SorptionMaterial(Am = 0.09, Km = 1.136e-3, a = -0.01, b = 1272.99, Kma = 3.2375e+05, Dm = 1e-09) # define sorption material; fit to chamber L data (didn't use chamber H data)
         # original parameters: material = SorptionMaterial(Am = 0.09, Km = 1e-5, a = -10.908, b = 9333.1, Kma = 4.05e5, Dm = 9.99e-7) # define sorption material
     case 3: 
         material = SorptionMaterial(Am = 10, Km = 4.528e-4, a = -0.29, b = 743.05, Kma = 1.4743e+05, Dm = 3.6745e-04) # define sorption material; fit to chamber L data (didn't use chamber H data)
