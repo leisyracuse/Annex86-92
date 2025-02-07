@@ -52,13 +52,13 @@ match sim_case:
     case 1:
         material = SorptionMaterial(Am = 0.09, Km = 4.528e-4, a = -0.29, b = 743.05, Kma = 1.4743e+05, Dm = 3.6745e-04) # define sorption material; fit to chamber L data
     case 2: 
-        material = SorptionMaterial(Am = 0.09, Km = 1.136e-3, a = -0.01, b = 1272.99, Kma = 1.4743e+05, Dm = 3.6745e-04) # define sorption material; fit to chamber L data (didn't use chamber H data)
+        material = SorptionMaterial(Am = 0.09, Km = 1.136e-3, a = -0.01, b = 1272.99, Kma = 3.2375e+05, Dm = 1e-10) # define sorption material; fit to chamber L data (didn't use chamber H data)
         # original parameters: material = SorptionMaterial(Am = 0.09, Km = 1e-5, a = -10.908, b = 9333.1, Kma = 4.05e5, Dm = 9.99e-7) # define sorption material
     case 3: 
         material = SorptionMaterial(Am = 10, Km = 4.528e-4, a = -0.29, b = 743.05, Kma = 1.4743e+05, Dm = 3.6745e-04) # define sorption material; fit to chamber L data (didn't use chamber H data)
     
 sim_mode = 1  # 0: Polynomial, 1: InterfaceModel (diffusion model)
-print_mat_diff = False  # unable material diffusion distribution print when expected output is too large
+print_mat_diff = False  # unable material diffusion distribution print as default; very slow for large number of time steps
 
 # ========================================= Curve Fitting Function =========================================
 def run_simulation_and_get_results(args):
@@ -105,7 +105,7 @@ def curve_fitting(args):
         param_bounds = [(-1000, 10000), (-1000, 10000)]
     else:
         initial_guess = [material.Kma, material.Dm]
-        param_bounds = [(1e4, 1e8), (1e-9, 1e-3)] # original: [(1e5, 1e7), (1e-8, 1e-4)]
+        param_bounds = [(1e5, 1e7), (1e-12, 1e-10)] # original: [(1e5, 1e7), (1e-8, 1e-4)]
     # Optimize parameters
     result = minimize(objective, initial_guess, bounds=param_bounds, method='L-BFGS-B', 
                       options={'eps': 1e-2, 'ftol': 1e-6, 'maxiter': 500})
