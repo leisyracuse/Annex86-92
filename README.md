@@ -1,2 +1,2 @@
 # IEA EBC Annex 86 and 92
-This repository, created by [Zhenlei Liu](linkedin.com/in/zhenlei-liu-247b10222) and [Jialei Shen](https://www.jialeishen.com), contributes to [Annex 86](https://annex86.iea-ebc.org) and [Annex 92](https://annex92.iea-ebc.org) Programs. It includes the development of building simulation tools for innovative materials using CONTAM and Python.  
+This repository, created by [Zhenlei Liu](linkedin.com/in/zhenlei-liu-247b10222), [Jialei Shen](https://www.jialeishen.com), and Rui Zhang(https://www.linkedin.com/in/rui-zhang-sophia) contributes to [Annex 86](https://annex86.iea-ebc.org) and [Annex 92](https://annex92.iea-ebc.org) Programs. It includes the development of building simulation tools for innovative materials using CONTAM and Python.  
